@@ -1,0 +1,3402 @@
+[
+  {
+    "id": "111",
+    "GPA": 3.96,
+    "GRE_Total": 0,
+    "IELTS_Score": 68,
+    "Country": "Nepal",
+    "Program": "Computer Science (MS)"
+  },
+  {
+    "id": "112",
+    "GPA": 3.92,
+    "GRE_Total": 0,
+    "IELTS_Score": 8,
+    "Country": "Nepal",
+    "Program": "Computer Science (MS)"
+  },
+  {
+    "id": "113",
+    "GPA": 3.9,
+    "GRE_Total": 0,
+    "IELTS_Score": 7.5,
+    "Country": "India",
+    "Program": "Computer Science (MS)"
+  },
+  {
+    "id": "114",
+    "GPA": 3.86,
+    "GRE_Total": 0,
+    "IELTS_Score": 7.5,
+    "Country": "Bangladesh",
+    "Program": "Computer Science (MS)"
+  },
+  {
+    "id": "115",
+    "GPA": 3.83,
+    "GRE_Total": 0,
+    "IELTS_Score": 7,
+    "Country": "Bangladesh",
+    "Program": "Software and Security Engineering (MS)"
+  },
+  {
+    "id": "116",
+    "GPA": 3.74,
+    "GRE_Total": 0,
+    "IELTS_Score": 0,
+    "Country": "India",
+    "Program": "Computer Science (MS)"
+  },
+  {
+    "id": "117",
+    "GPA": 3.71,
+    "GRE_Total": 0,
+    "IELTS_Score": 6.5,
+    "Country": "Bangladesh",
+    "Program": "Computer Science (MS)"
+  },
+  {
+    "id": "118",
+    "GPA": 3.64,
+    "GRE_Total": 0,
+    "IELTS_Score": 6.5,
+    "Country": "Bangladesh",
+    "Program": "Software & Security Engineering (MS)"
+  },
+  {
+    "id": "119",
+    "GPA": 3.63,
+    "GRE_Total": 0,
+    "IELTS_Score": 8,
+    "Country": "Bangladesh",
+    "Program": "Computer Science (MS)"
+  },
+  {
+    "id": "120",
+    "GPA": 3.62,
+    "GRE_Total": 0,
+    "IELTS_Score": 111,
+    "Country": "Bangladesh",
+    "Program": "Computer Science (MS)"
+  },
+  {
+    "id": "121",
+    "GPA": 3.62,
+    "GRE_Total": 0,
+    "IELTS_Score": 7.5,
+    "Country": "Nepal",
+    "Program": "Computer Science (MS)"
+  },
+  {
+    "id": "122",
+    "GPA": 3.56,
+    "GRE_Total": 0,
+    "IELTS_Score": 7.5,
+    "Country": "India",
+    "Program": "Computer Science (MS)"
+  },
+  {
+    "id": "123",
+    "GPA": 3.54,
+    "GRE_Total": 0,
+    "IELTS_Score": 7,
+    "Country": "Nepal",
+    "Program": "Computer Science (MS)"
+  },
+  {
+    "id": "124",
+    "GPA": 3.54,
+    "GRE_Total": 0,
+    "IELTS_Score": 0,
+    "Country": "Bangladesh",
+    "Program": "Computer Science (MS)"
+  },
+  {
+    "id": "125",
+    "GPA": 3.53,
+    "GRE_Total": 0,
+    "IELTS_Score": 100,
+    "Country": "India",
+    "Program": "Computer Science (MS)"
+  },
+  {
+    "id": "126",
+    "GPA": 3.52,
+    "GRE_Total": 0,
+    "IELTS_Score": 7,
+    "Country": "India",
+    "Program": "Software and Security Engineering (MS)"
+  },
+  {
+    "id": "127",
+    "GPA": 3.5,
+    "GRE_Total": 0,
+    "IELTS_Score": 0,
+    "Country": "Ghana",
+    "Program": "Computer Science (MS)"
+  },
+  {
+    "id": "128",
+    "GPA": 3.49,
+    "GRE_Total": 0,
+    "IELTS_Score": 0,
+    "Country": "India",
+    "Program": "Computer Science (MS)"
+  },
+  {
+    "id": "129",
+    "GPA": 3.49,
+    "GRE_Total": 0,
+    "IELTS_Score": 8,
+    "Country": "Bangladesh",
+    "Program": "Computer Science (MS)"
+  },
+  {
+    "id": "130",
+    "GPA": 3.45,
+    "GRE_Total": 0,
+    "IELTS_Score": 8,
+    "Country": "Nepal",
+    "Program": "Computer Science (MS)"
+  },
+  {
+    "id": "131",
+    "GPA": 3.42,
+    "GRE_Total": 0,
+    "IELTS_Score": 0,
+    "Country": "Domestic",
+    "Program": "Security Certificate"
+  },
+  {
+    "id": "132",
+    "GPA": 3.4,
+    "GRE_Total": 0,
+    "IELTS_Score": 8,
+    "Country": "Nepal",
+    "Program": "Computer Science (MS)"
+  },
+  {
+    "id": "133",
+    "GPA": 3.39,
+    "GRE_Total": 0,
+    "IELTS_Score": 0,
+    "Country": "India",
+    "Program": "Computer Science (MS)"
+  },
+  {
+    "id": "134",
+    "GPA": 3.39,
+    "GRE_Total": 0,
+    "IELTS_Score": 7,
+    "Country": "Nepal",
+    "Program": "Software & Security Engineering (MS)"
+  },
+  {
+    "id": "135",
+    "GPA": 3.39,
+    "GRE_Total": 0,
+    "IELTS_Score": 0,
+    "Country": "Nigeria",
+    "Program": "Computer Science (MS)"
+  },
+  {
+    "id": "136",
+    "GPA": 3.37,
+    "GRE_Total": 0,
+    "IELTS_Score": 105,
+    "Country": "India",
+    "Program": "Computer Science (MS)"
+  },
+  {
+    "id": "137",
+    "GPA": 3.29,
+    "GRE_Total": 0,
+    "IELTS_Score": 7,
+    "Country": "Bangladesh",
+    "Program": "Computer Science (MS)"
+  },
+  {
+    "id": "138",
+    "GPA": 3.28,
+    "GRE_Total": 0,
+    "IELTS_Score": 7,
+    "Country": "India",
+    "Program": "Computer Science (MS)"
+  },
+  {
+    "id": "139",
+    "GPA": 3.28,
+    "GRE_Total": 0,
+    "IELTS_Score": 6.5,
+    "Country": "Bangladesh",
+    "Program": "Software & Security Engineering (MS)"
+  },
+  {
+    "id": "140",
+    "GPA": 3.25,
+    "GRE_Total": 0,
+    "IELTS_Score": 91,
+    "Country": "India",
+    "Program": "Computer Science (MS)"
+  },
+  {
+    "id": "141",
+    "GPA": 3.24,
+    "GRE_Total": 0,
+    "IELTS_Score": 0,
+    "Country": "Pakistan",
+    "Program": "Computer Science (MS)"
+  },
+  {
+    "id": "142",
+    "GPA": 3.23,
+    "GRE_Total": 0,
+    "IELTS_Score": 0,
+    "Country": "India",
+    "Program": "Computer Science (MS)"
+  },
+  {
+    "id": "143",
+    "GPA": 3.22,
+    "GRE_Total": 0,
+    "IELTS_Score": 104,
+    "Country": "Iran",
+    "Program": "Computer Science (MS)"
+  },
+  {
+    "id": "144",
+    "GPA": 3.19,
+    "GRE_Total": 0,
+    "IELTS_Score": 6.5,
+    "Country": "Nepal",
+    "Program": "Computer Science (MS)"
+  },
+  {
+    "id": "145",
+    "GPA": 3.17,
+    "GRE_Total": 0,
+    "IELTS_Score": 85,
+    "Country": "South Korea",
+    "Program": "Computer Science (MS)"
+  },
+  {
+    "id": "146",
+    "GPA": 3.16,
+    "GRE_Total": 0,
+    "IELTS_Score": 7,
+    "Country": "Nepal",
+    "Program": "Computer Science (MS)"
+  },
+  {
+    "id": "147",
+    "GPA": 3.14,
+    "GRE_Total": 0,
+    "IELTS_Score": 0,
+    "Country": "India",
+    "Program": "Computer Science (MS)"
+  },
+  {
+    "id": "148",
+    "GPA": 3.09,
+    "GRE_Total": 0,
+    "IELTS_Score": 92,
+    "Country": "India",
+    "Program": "Computer Science (MS)"
+  },
+  {
+    "id": "149",
+    "GPA": 3.08,
+    "GRE_Total": 0,
+    "IELTS_Score": 91,
+    "Country": "Nepal",
+    "Program": "Computer Science (MS)"
+  },
+  {
+    "id": "150",
+    "GPA": 3.05,
+    "GRE_Total": 0,
+    "IELTS_Score": 7.5,
+    "Country": "India",
+    "Program": "Computer Science (MS)"
+  },
+  {
+    "id": "151",
+    "GPA": 3,
+    "GRE_Total": 0,
+    "IELTS_Score": 8,
+    "Country": "Nepal",
+    "Program": "Computer Science (MS)"
+  },
+  {
+    "id": "152",
+    "GPA": 2.95,
+    "GRE_Total": 0,
+    "IELTS_Score": 101,
+    "Country": "India",
+    "Program": "Computer Science (MS)"
+  },
+  {
+    "id": "153",
+    "GPA": 2.91,
+    "GRE_Total": 0,
+    "IELTS_Score": 7,
+    "Country": "Bangladesh",
+    "Program": "Software & Security Engineering (MS)"
+  },
+  {
+    "id": "154",
+    "GPA": 2.88,
+    "GRE_Total": 0,
+    "IELTS_Score": 0,
+    "Country": "Nigeria",
+    "Program": "Computer Science (MS)"
+  },
+  {
+    "id": "155",
+    "GPA": 2.74,
+    "GRE_Total": 0,
+    "IELTS_Score": 0,
+    "Country": "India",
+    "Program": "Computer Science (MS)"
+  },
+  {
+    "id": "156",
+    "GPA": 2.71,
+    "GRE_Total": 0,
+    "IELTS_Score": 7,
+    "Country": "Pakistan",
+    "Program": "Computer Science (MS)"
+  },
+  {
+    "id": "157",
+    "GPA": 2.67,
+    "GRE_Total": 0,
+    "IELTS_Score": 92,
+    "Country": "India",
+    "Program": "Software and Security Engineering (MS)"
+  },
+  {
+    "id": "158",
+    "GPA": 4,
+    "GRE_Total": 0,
+    "IELTS_Score": 8,
+    "Country": "Nepal",
+    "Program": "Computer Science (MS)"
+  },
+  {
+    "id": "159",
+    "GPA": 4,
+    "GRE_Total": 0,
+    "IELTS_Score": 0,
+    "Country": "Domestic",
+    "Program": "Software & Security Engineering (MS)"
+  },
+  {
+    "id": "160",
+    "GPA": 3.82,
+    "GRE_Total": 0,
+    "IELTS_Score": 0,
+    "Country": "Gahna",
+    "Program": "Software & Security Engineering (MS)"
+  },
+  {
+    "id": "161",
+    "GPA": 3.79,
+    "GRE_Total": 0,
+    "IELTS_Score": 104,
+    "Country": "India",
+    "Program": "Computer Science (MS)"
+  },
+  {
+    "id": "162",
+    "GPA": 3.64,
+    "GRE_Total": 0,
+    "IELTS_Score": 7.5,
+    "Country": "Nepal",
+    "Program": "Computer Science (MS)"
+  },
+  {
+    "id": "163",
+    "GPA": 3.61,
+    "GRE_Total": 0,
+    "IELTS_Score": 0,
+    "Country": "India",
+    "Program": "Computer Science (MS)"
+  },
+  {
+    "id": "164",
+    "GPA": 3.59,
+    "GRE_Total": 0,
+    "IELTS_Score": 0,
+    "Country": "Bangladesh",
+    "Program": "Computer Science (MS)"
+  },
+  {
+    "id": "165",
+    "GPA": 3.55,
+    "GRE_Total": 0,
+    "IELTS_Score": 86,
+    "Country": "India",
+    "Program": "Computer Science (MS)"
+  },
+  {
+    "id": "166",
+    "GPA": 3.48,
+    "GRE_Total": 0,
+    "IELTS_Score": 0,
+    "Country": "Nigeria",
+    "Program": "Computer Science (MS)"
+  },
+  {
+    "id": "167",
+    "GPA": 3.47,
+    "GRE_Total": 0,
+    "IELTS_Score": 6.5,
+    "Country": "India",
+    "Program": "Computer Science (MS)"
+  },
+  {
+    "id": "168",
+    "GPA": 3.46,
+    "GRE_Total": 0,
+    "IELTS_Score": 91,
+    "Country": "India",
+    "Program": "Computer Science (MS)"
+  },
+  {
+    "id": "169",
+    "GPA": 3.45,
+    "GRE_Total": 0,
+    "IELTS_Score": 8,
+    "Country": "Nepal",
+    "Program": "Computer Science (MS)"
+  },
+  {
+    "id": "170",
+    "GPA": 3.44,
+    "GRE_Total": 0,
+    "IELTS_Score": 99,
+    "Country": "India",
+    "Program": "Computer Science (MS)"
+  },
+  {
+    "id": "171",
+    "GPA": 3.4,
+    "GRE_Total": 0,
+    "IELTS_Score": 90,
+    "Country": "India",
+    "Program": "Computer Science (MS)"
+  },
+  {
+    "id": "172",
+    "GPA": 3.4,
+    "GRE_Total": 0,
+    "IELTS_Score": 101,
+    "Country": "India",
+    "Program": "Computer Science (MS)"
+  },
+  {
+    "id": "173",
+    "GPA": 3.38,
+    "GRE_Total": 0,
+    "IELTS_Score": 7,
+    "Country": "Nepal",
+    "Program": "Computer Science (MS)"
+  },
+  {
+    "id": "174",
+    "GPA": 3.38,
+    "GRE_Total": 0,
+    "IELTS_Score": 0,
+    "Country": "India",
+    "Program": "Computer Science (MS)"
+  },
+  {
+    "id": "175",
+    "GPA": 3.36,
+    "GRE_Total": 0,
+    "IELTS_Score": 6.5,
+    "Country": "India",
+    "Program": "Computer Science (MS)"
+  },
+  {
+    "id": "176",
+    "GPA": 3.36,
+    "GRE_Total": 0,
+    "IELTS_Score": 7,
+    "Country": "Nepal",
+    "Program": "Computer Science (MS)"
+  },
+  {
+    "id": "177",
+    "GPA": 3.33,
+    "GRE_Total": 0,
+    "IELTS_Score": 0,
+    "Country": "Bangladesh",
+    "Program": "Computer Science (MS)"
+  },
+  {
+    "id": "178",
+    "GPA": 3.32,
+    "GRE_Total": 0,
+    "IELTS_Score": 90,
+    "Country": "India",
+    "Program": "Computer Science (MS)"
+  },
+  {
+    "id": "179",
+    "GPA": 3.31,
+    "GRE_Total": 0,
+    "IELTS_Score": 0,
+    "Country": "Bangladesh",
+    "Program": "Computer Science (MS)"
+  },
+  {
+    "id": "180",
+    "GPA": 3.3,
+    "GRE_Total": 0,
+    "IELTS_Score": 7,
+    "Country": "Nepal",
+    "Program": "Computer Science (MS)"
+  },
+  {
+    "id": "181",
+    "GPA": 3.29,
+    "GRE_Total": 0,
+    "IELTS_Score": 0,
+    "Country": "Bangladesh",
+    "Program": "Computer Science (MS)"
+  },
+  {
+    "id": "182",
+    "GPA": 3.29,
+    "GRE_Total": 0,
+    "IELTS_Score": 6.5,
+    "Country": "Bangladesh",
+    "Program": "Computer Science (MS)"
+  },
+  {
+    "id": "183",
+    "GPA": 3.28,
+    "GRE_Total": 0,
+    "IELTS_Score": 7,
+    "Country": "Nepal",
+    "Program": "Computer Science (MS)"
+  },
+  {
+    "id": "184",
+    "GPA": 3.28,
+    "GRE_Total": 0,
+    "IELTS_Score": 7,
+    "Country": "India",
+    "Program": "Computer Science (MS)"
+  },
+  {
+    "id": "185",
+    "GPA": 3.26,
+    "GRE_Total": 0,
+    "IELTS_Score": 0,
+    "Country": "India",
+    "Program": "Computer Science (MS)"
+  },
+  {
+    "id": "186",
+    "GPA": 3.25,
+    "GRE_Total": 0,
+    "IELTS_Score": 86,
+    "Country": "India",
+    "Program": "Computer Science (MS)"
+  },
+  {
+    "id": "187",
+    "GPA": 3.24,
+    "GRE_Total": 0,
+    "IELTS_Score": 8.5,
+    "Country": "Pakistan",
+    "Program": "Computer Science (MS)"
+  },
+  {
+    "id": "188",
+    "GPA": 3.19,
+    "GRE_Total": 0,
+    "IELTS_Score": 89,
+    "Country": "India",
+    "Program": "Computer Science (MS)"
+  },
+  {
+    "id": "189",
+    "GPA": 3.14,
+    "GRE_Total": 0,
+    "IELTS_Score": 0,
+    "Country": "India",
+    "Program": "Computer Science (MS)"
+  },
+  {
+    "id": "190",
+    "GPA": 3.11,
+    "GRE_Total": 0,
+    "IELTS_Score": 6.5,
+    "Country": "Bangladesh",
+    "Program": "Computer Science (MS)"
+  },
+  {
+    "id": "191",
+    "GPA": 3.11,
+    "GRE_Total": 0,
+    "IELTS_Score": 6.5,
+    "Country": "Bangladesh",
+    "Program": "Computer Science (MS)"
+  },
+  {
+    "id": "192",
+    "GPA": 3.09,
+    "GRE_Total": 0,
+    "IELTS_Score": 0,
+    "Country": "India",
+    "Program": "Computer Science (MS)"
+  },
+  {
+    "id": "193",
+    "GPA": 3.08,
+    "GRE_Total": 0,
+    "IELTS_Score": 7,
+    "Country": "Bangladesh",
+    "Program": "Computer Science (MS)"
+  },
+  {
+    "id": "194",
+    "GPA": 3.04,
+    "GRE_Total": 0,
+    "IELTS_Score": 101,
+    "Country": "Nepal",
+    "Program": "Computer Science (MS)"
+  },
+  {
+    "id": "195",
+    "GPA": 3.03,
+    "GRE_Total": 0,
+    "IELTS_Score": 83,
+    "Country": "India",
+    "Program": "Computer Science (MS)"
+  },
+  {
+    "id": "196",
+    "GPA": 3.02,
+    "GRE_Total": 0,
+    "IELTS_Score": 0,
+    "Country": "Gahna",
+    "Program": "Computer Science (MS)"
+  },
+  {
+    "id": "197",
+    "GPA": 3.01,
+    "GRE_Total": 0,
+    "IELTS_Score": 6.5,
+    "Country": "Bangladesh",
+    "Program": "Computer Science (MS)"
+  },
+  {
+    "id": "198",
+    "GPA": 3,
+    "GRE_Total": 0,
+    "IELTS_Score": 92,
+    "Country": "India",
+    "Program": "Computer Science (MS)"
+  },
+  {
+    "id": "199",
+    "GPA": 2.97,
+    "GRE_Total": 0,
+    "IELTS_Score": 7.5,
+    "Country": "India",
+    "Program": "Computer Science (MS)"
+  },
+  {
+    "id": "200",
+    "GPA": 2.96,
+    "GRE_Total": 0,
+    "IELTS_Score": 0,
+    "Country": "India",
+    "Program": "Computer Science (MS)"
+  },
+  {
+    "id": "201",
+    "GPA": 2.76,
+    "GRE_Total": 0,
+    "IELTS_Score": 93,
+    "Country": "India",
+    "Program": "Computer Science (MS)"
+  },
+  {
+    "id": "202",
+    "GPA": 2.76,
+    "GRE_Total": 0,
+    "IELTS_Score": 0,
+    "Country": "India",
+    "Program": "Computer Science (MS)"
+  },
+  {
+    "id": "203",
+    "GPA": 2.74,
+    "GRE_Total": 0,
+    "IELTS_Score": 0,
+    "Country": "India",
+    "Program": "Computer Science (MS)"
+  },
+  {
+    "id": "204",
+    "GPA": 2.72,
+    "GRE_Total": 0,
+    "IELTS_Score": 61,
+    "Country": "India",
+    "Program": "Computer Science (MS)"
+  },
+  {
+    "id": "205",
+    "GPA": 2.5,
+    "GRE_Total": 0,
+    "IELTS_Score": 0,
+    "Country": "India",
+    "Program": "Computer Science (MS)"
+  },
+  {
+    "id": "206",
+    "GPA": 3.88,
+    "GRE_Total": 0,
+    "IELTS_Score": 7.5,
+    "Country": "Nepal",
+    "Program": "Computer Science (MS)"
+  },
+  {
+    "id": "207",
+    "GPA": 3.88,
+    "GRE_Total": 0,
+    "IELTS_Score": 0,
+    "Country": "Domestic",
+    "Program": "Computer Science (MS)"
+  },
+  {
+    "id": "208",
+    "GPA": 3.81,
+    "GRE_Total": 0,
+    "IELTS_Score": 7,
+    "Country": "Bangladesh",
+    "Program": "Computer Science (MS)"
+  },
+  {
+    "id": "209",
+    "GPA": 3.68,
+    "GRE_Total": 0,
+    "IELTS_Score": 7.5,
+    "Country": "Bangladesh",
+    "Program": "Computer Science (MS)"
+  },
+  {
+    "id": "210",
+    "GPA": 3.66,
+    "GRE_Total": 0,
+    "IELTS_Score": 0,
+    "Country": "Pakistan",
+    "Program": "Computer Science (MS)"
+  },
+  {
+    "id": "211",
+    "GPA": 3.65,
+    "GRE_Total": 0,
+    "IELTS_Score": 6.5,
+    "Country": "Bangladesh",
+    "Program": "Software & Security Engineering (MS)"
+  },
+  {
+    "id": "212",
+    "GPA": 3.59,
+    "GRE_Total": 0,
+    "IELTS_Score": 7,
+    "Country": "Nepal",
+    "Program": "Computer Science (MS)"
+  },
+  {
+    "id": "213",
+    "GPA": 3.57,
+    "GRE_Total": 0,
+    "IELTS_Score": 7,
+    "Country": "India",
+    "Program": "Computer Science (MS)"
+  },
+  {
+    "id": "214",
+    "GPA": 3.55,
+    "GRE_Total": 0,
+    "IELTS_Score": 6.5,
+    "Country": "Bangladesh",
+    "Program": "Software & Security Engineering (MS)"
+  },
+  {
+    "id": "215",
+    "GPA": 3.53,
+    "GRE_Total": 0,
+    "IELTS_Score": 0,
+    "Country": "China",
+    "Program": "Computer Science (MS)"
+  },
+  {
+    "id": "216",
+    "GPA": 3.51,
+    "GRE_Total": 0,
+    "IELTS_Score": 7,
+    "Country": "Bangladesh",
+    "Program": "Computer Science (MS)"
+  },
+  {
+    "id": "217",
+    "GPA": 3.49,
+    "GRE_Total": 0,
+    "IELTS_Score": 0,
+    "Country": "India",
+    "Program": "Computer Science (MS)"
+  },
+  {
+    "id": "218",
+    "GPA": 3.47,
+    "GRE_Total": 0,
+    "IELTS_Score": 7,
+    "Country": "Nepal",
+    "Program": "Computer Science (MS)"
+  },
+  {
+    "id": "219",
+    "GPA": 3.47,
+    "GRE_Total": 0,
+    "IELTS_Score": 0,
+    "Country": "China",
+    "Program": "Computer Science (MS)"
+  },
+  {
+    "id": "220",
+    "GPA": 3.46,
+    "GRE_Total": 0,
+    "IELTS_Score": 0,
+    "Country": "Domestic",
+    "Program": "Accelerated - Computer Science (MS)"
+  },
+  {
+    "id": "221",
+    "GPA": 3.42,
+    "GRE_Total": 0,
+    "IELTS_Score": 6.5,
+    "Country": "India",
+    "Program": "Computer Science (MS)"
+  },
+  {
+    "id": "222",
+    "GPA": 3.42,
+    "GRE_Total": 0,
+    "IELTS_Score": 7.5,
+    "Country": "Nepal",
+    "Program": "Computer Science (MS)"
+  },
+  {
+    "id": "223",
+    "GPA": 3.38,
+    "GRE_Total": 0,
+    "IELTS_Score": 0,
+    "Country": "Bangladesh",
+    "Program": "Computer Science (MS)"
+  },
+  {
+    "id": "224",
+    "GPA": 3.34,
+    "GRE_Total": 0,
+    "IELTS_Score": 7,
+    "Country": "India",
+    "Program": "Computer Science (MS)"
+  },
+  {
+    "id": "225",
+    "GPA": 3.34,
+    "GRE_Total": 0,
+    "IELTS_Score": 0,
+    "Country": "India",
+    "Program": "Computer Science (MS)"
+  },
+  {
+    "id": "226",
+    "GPA": 3.33,
+    "GRE_Total": 0,
+    "IELTS_Score": 7.5,
+    "Country": "Nepal",
+    "Program": "Computer Science (MS)"
+  },
+  {
+    "id": "227",
+    "GPA": 3.33,
+    "GRE_Total": 0,
+    "IELTS_Score": 0,
+    "Country": "Nepal",
+    "Program": "Computer Science (MS)"
+  },
+  {
+    "id": "228",
+    "GPA": 3.28,
+    "GRE_Total": 0,
+    "IELTS_Score": 0,
+    "Country": "Domestic",
+    "Program": "Computer Science (MS)"
+  },
+  {
+    "id": "229",
+    "GPA": 3.27,
+    "GRE_Total": 0,
+    "IELTS_Score": 7,
+    "Country": "Bangladesh",
+    "Program": "Software & Security Engineering (MS)"
+  },
+  {
+    "id": "230",
+    "GPA": 3.26,
+    "GRE_Total": 0,
+    "IELTS_Score": 0,
+    "Country": "India",
+    "Program": "Computer Science (MS)"
+  },
+  {
+    "id": "231",
+    "GPA": 3.25,
+    "GRE_Total": 0,
+    "IELTS_Score": 108,
+    "Country": "Iran",
+    "Program": "Computer Science (MS)"
+  },
+  {
+    "id": "232",
+    "GPA": 3.25,
+    "GRE_Total": 0,
+    "IELTS_Score": 7.5,
+    "Country": "Nepal",
+    "Program": "Computer Science (MS)"
+  },
+  {
+    "id": "233",
+    "GPA": 3.24,
+    "GRE_Total": 0,
+    "IELTS_Score": 7,
+    "Country": "Bangladesh",
+    "Program": "Computer Science (MS)"
+  },
+  {
+    "id": "234",
+    "GPA": 3.23,
+    "GRE_Total": 0,
+    "IELTS_Score": 0,
+    "Country": "India",
+    "Program": "Computer Science (MS)"
+  },
+  {
+    "id": "235",
+    "GPA": 3.22,
+    "GRE_Total": 0,
+    "IELTS_Score": 92,
+    "Country": "India",
+    "Program": "Computer Science (MS)"
+  },
+  {
+    "id": "236",
+    "GPA": 3.2,
+    "GRE_Total": 0,
+    "IELTS_Score": 0,
+    "Country": "China",
+    "Program": "Computer Science (MS)"
+  },
+  {
+    "id": "237",
+    "GPA": 3.17,
+    "GRE_Total": 0,
+    "IELTS_Score": 101,
+    "Country": "India",
+    "Program": "Computer Science (MS)"
+  },
+  {
+    "id": "238",
+    "GPA": 3.16,
+    "GRE_Total": 0,
+    "IELTS_Score": 6.5,
+    "Country": "Nepal",
+    "Program": "Computer Science (MS)"
+  },
+  {
+    "id": "239",
+    "GPA": 3.16,
+    "GRE_Total": 0,
+    "IELTS_Score": 7,
+    "Country": "Nepal",
+    "Program": "Computer Science (MS)"
+  },
+  {
+    "id": "240",
+    "GPA": 3.14,
+    "GRE_Total": 0,
+    "IELTS_Score": 0,
+    "Country": "India",
+    "Program": "Computer Science (MS)"
+  },
+  {
+    "id": "241",
+    "GPA": 3.13,
+    "GRE_Total": 0,
+    "IELTS_Score": 112,
+    "Country": "Nepal",
+    "Program": "Computer Science (MS)"
+  },
+  {
+    "id": "242",
+    "GPA": 3.11,
+    "GRE_Total": 0,
+    "IELTS_Score": 0,
+    "Country": "Kenya",
+    "Program": "Computer Science (MS)"
+  },
+  {
+    "id": "243",
+    "GPA": 3.11,
+    "GRE_Total": 0,
+    "IELTS_Score": 0,
+    "Country": "India",
+    "Program": "Computer Science (MS)"
+  },
+  {
+    "id": "244",
+    "GPA": 3.08,
+    "GRE_Total": 0,
+    "IELTS_Score": 92,
+    "Country": "India",
+    "Program": "Computer Science (MS)"
+  },
+  {
+    "id": "245",
+    "GPA": 3.08,
+    "GRE_Total": 0,
+    "IELTS_Score": 0,
+    "Country": "Pakistan",
+    "Program": "Computer Science (MS)"
+  },
+  {
+    "id": "246",
+    "GPA": 3.03,
+    "GRE_Total": 0,
+    "IELTS_Score": 7.5,
+    "Country": "India",
+    "Program": "Computer Science (MS)"
+  },
+  {
+    "id": "247",
+    "GPA": 2.91,
+    "GRE_Total": 0,
+    "IELTS_Score": 6.5,
+    "Country": "India",
+    "Program": "Computer Science (MS)"
+  },
+  {
+    "id": "248",
+    "GPA": 2.88,
+    "GRE_Total": 0,
+    "IELTS_Score": 7,
+    "Country": "India",
+    "Program": "Computer Science (MS)"
+  },
+  {
+    "id": "249",
+    "GPA": 2.85,
+    "GRE_Total": 0,
+    "IELTS_Score": 0,
+    "Country": "Nepal",
+    "Program": "Computer Science (MS)"
+  },
+  {
+    "id": "250",
+    "GPA": 2.85,
+    "GRE_Total": 0,
+    "IELTS_Score": 6.5,
+    "Country": "India",
+    "Program": "Computer Science (MS)"
+  },
+  {
+    "id": "251",
+    "GPA": 2.83,
+    "GRE_Total": 0,
+    "IELTS_Score": 0,
+    "Country": "India",
+    "Program": "Computer Science (MS)"
+  },
+  {
+    "id": "252",
+    "GPA": 2.82,
+    "GRE_Total": 0,
+    "IELTS_Score": 6.5,
+    "Country": "India",
+    "Program": "Computer Science (MS)"
+  },
+  {
+    "id": "253",
+    "GPA": 2.78,
+    "GRE_Total": 0,
+    "IELTS_Score": 0,
+    "Country": "India",
+    "Program": "Computer Science (MS)"
+  },
+  {
+    "id": "254",
+    "GPA": 3.88,
+    "GRE_Total": 0,
+    "IELTS_Score": 7,
+    "Country": "Bangladesh",
+    "Program": "Computer Science (MS)"
+  },
+  {
+    "id": "255",
+    "GPA": 3.69,
+    "GRE_Total": 0,
+    "IELTS_Score": 6.5,
+    "Country": "Bangladesh",
+    "Program": "Computer Science (MS)"
+  },
+  {
+    "id": "256",
+    "GPA": 3.59,
+    "GRE_Total": 0,
+    "IELTS_Score": 7,
+    "Country": "India",
+    "Program": "Computer Science (MS)"
+  },
+  {
+    "id": "257",
+    "GPA": 3.54,
+    "GRE_Total": 0,
+    "IELTS_Score": 7,
+    "Country": "Nepal",
+    "Program": "Computer Science (MS)"
+  },
+  {
+    "id": "258",
+    "GPA": 3.54,
+    "GRE_Total": 0,
+    "IELTS_Score": 8,
+    "Country": "Nepal",
+    "Program": "Computer Science (MS)"
+  },
+  {
+    "id": "259",
+    "GPA": 3.5,
+    "GRE_Total": 0,
+    "IELTS_Score": 0,
+    "Country": "India",
+    "Program": "Computer Science (MS)"
+  },
+  {
+    "id": "260",
+    "GPA": 3.48,
+    "GRE_Total": 0,
+    "IELTS_Score": 8,
+    "Country": "India",
+    "Program": "Computer Science (MS)"
+  },
+  {
+    "id": "261",
+    "GPA": 3.45,
+    "GRE_Total": 0,
+    "IELTS_Score": 0,
+    "Country": "India",
+    "Program": "Computer Science (MS)"
+  },
+  {
+    "id": "262",
+    "GPA": 3.4,
+    "GRE_Total": 0,
+    "IELTS_Score": 7.5,
+    "Country": "Nepal",
+    "Program": "Computer Science (MS)"
+  },
+  {
+    "id": "263",
+    "GPA": 3.32,
+    "GRE_Total": 0,
+    "IELTS_Score": 0,
+    "Country": "Pakistan",
+    "Program": "Computer Science (MS)"
+  },
+  {
+    "id": "264",
+    "GPA": 3.3,
+    "GRE_Total": 0,
+    "IELTS_Score": 0,
+    "Country": "Nepal",
+    "Program": "Computer Science (MS)"
+  },
+  {
+    "id": "265",
+    "GPA": 3.3,
+    "GRE_Total": 0,
+    "IELTS_Score": 0,
+    "Country": "Panama",
+    "Program": "Computer Science (MS)"
+  },
+  {
+    "id": "266",
+    "GPA": 3.28,
+    "GRE_Total": 0,
+    "IELTS_Score": 0,
+    "Country": "Domestic",
+    "Program": "Computer Science (MS)"
+  },
+  {
+    "id": "267",
+    "GPA": 3.27,
+    "GRE_Total": 0,
+    "IELTS_Score": 0,
+    "Country": "Nigeria",
+    "Program": "Computer Science (MS)"
+  },
+  {
+    "id": "268",
+    "GPA": 3.25,
+    "GRE_Total": 0,
+    "IELTS_Score": 0,
+    "Country": "Ghana",
+    "Program": "Software & Security Engineering (MS)"
+  },
+  {
+    "id": "269",
+    "GPA": 3.23,
+    "GRE_Total": 0,
+    "IELTS_Score": 0,
+    "Country": "Nepal",
+    "Program": "Computer Science (MS)"
+  },
+  {
+    "id": "270",
+    "GPA": 3.23,
+    "GRE_Total": 0,
+    "IELTS_Score": 93,
+    "Country": "India",
+    "Program": "Computer Science (MS)"
+  },
+  {
+    "id": "271",
+    "GPA": 3.21,
+    "GRE_Total": 0,
+    "IELTS_Score": 83,
+    "Country": "Nepal",
+    "Program": "Computer Science (MS)"
+  },
+  {
+    "id": "272",
+    "GPA": 3.2,
+    "GRE_Total": 0,
+    "IELTS_Score": 0,
+    "Country": "Nepal",
+    "Program": "Computer Science (MS)"
+  },
+  {
+    "id": "273",
+    "GPA": 3.18,
+    "GRE_Total": 0,
+    "IELTS_Score": 7.5,
+    "Country": "Nepal",
+    "Program": "Computer Science (MS)"
+  },
+  {
+    "id": "274",
+    "GPA": 3.18,
+    "GRE_Total": 0,
+    "IELTS_Score": 7.5,
+    "Country": "Nepal",
+    "Program": "Computer Science (MS)"
+  },
+  {
+    "id": "275",
+    "GPA": 3.18,
+    "GRE_Total": 0,
+    "IELTS_Score": 0,
+    "Country": "Bangladesh",
+    "Program": "Computer Science (MS)"
+  },
+  {
+    "id": "276",
+    "GPA": 3.15,
+    "GRE_Total": 0,
+    "IELTS_Score": 0,
+    "Country": "Bangladesh",
+    "Program": "Computer Science (MS)"
+  },
+  {
+    "id": "277",
+    "GPA": 3.13,
+    "GRE_Total": 0,
+    "IELTS_Score": 0,
+    "Country": "Ghana",
+    "Program": "Computer Science (MS)"
+  },
+  {
+    "id": "278",
+    "GPA": 3.12,
+    "GRE_Total": 0,
+    "IELTS_Score": 0,
+    "Country": "Pakistan",
+    "Program": "Computer Science (MS)"
+  },
+  {
+    "id": "279",
+    "GPA": 3.1,
+    "GRE_Total": 0,
+    "IELTS_Score": 0,
+    "Country": "Pakistan",
+    "Program": "Computer Science (MS)"
+  },
+  {
+    "id": "280",
+    "GPA": 3.08,
+    "GRE_Total": 0,
+    "IELTS_Score": 0,
+    "Country": "India",
+    "Program": "Computer Science (MS)"
+  },
+  {
+    "id": "281",
+    "GPA": 3.08,
+    "GRE_Total": 0,
+    "IELTS_Score": 0,
+    "Country": "Pakistan",
+    "Program": "Computer Science (MS)"
+  },
+  {
+    "id": "282",
+    "GPA": 3.08,
+    "GRE_Total": 0,
+    "IELTS_Score": 8,
+    "Country": "India",
+    "Program": "Computer Science (MS)"
+  },
+  {
+    "id": "283",
+    "GPA": 3.07,
+    "GRE_Total": 0,
+    "IELTS_Score": 6.5,
+    "Country": "India",
+    "Program": "Computer Science (MS)"
+  },
+  {
+    "id": "284",
+    "GPA": 3.07,
+    "GRE_Total": 0,
+    "IELTS_Score": 0,
+    "Country": "India",
+    "Program": "Computer Science (MS)"
+  },
+  {
+    "id": "285",
+    "GPA": 3.05,
+    "GRE_Total": 0,
+    "IELTS_Score": 0,
+    "Country": "Domestic",
+    "Program": "Computer Science (MS)"
+  },
+  {
+    "id": "286",
+    "GPA": 3.03,
+    "GRE_Total": 0,
+    "IELTS_Score": 62,
+    "Country": "Pakistan",
+    "Program": "Computer Science (MS)"
+  },
+  {
+    "id": "287",
+    "GPA": 3.01,
+    "GRE_Total": 0,
+    "IELTS_Score": 6.5,
+    "Country": "India",
+    "Program": "Computer Science (MS)"
+  },
+  {
+    "id": "288",
+    "GPA": 3,
+    "GRE_Total": 0,
+    "IELTS_Score": 7,
+    "Country": "India",
+    "Program": "Computer Science (MS)"
+  },
+  {
+    "id": "289",
+    "GPA": 3,
+    "GRE_Total": 0,
+    "IELTS_Score": 0,
+    "Country": "Pakistan",
+    "Program": "Computer Science (MS)"
+  },
+  {
+    "id": "290",
+    "GPA": 2.98,
+    "GRE_Total": 0,
+    "IELTS_Score": 7.5,
+    "Country": "India",
+    "Program": "Computer Science (MS)"
+  },
+  {
+    "id": "291",
+    "GPA": 2.97,
+    "GRE_Total": 0,
+    "IELTS_Score": 7,
+    "Country": "Pakistan",
+    "Program": "Software & Security Engineering (MS)"
+  },
+  {
+    "id": "292",
+    "GPA": 2.97,
+    "GRE_Total": 0,
+    "IELTS_Score": 97,
+    "Country": "India",
+    "Program": "Computer Science (MS)"
+  },
+  {
+    "id": "293",
+    "GPA": 2.96,
+    "GRE_Total": 0,
+    "IELTS_Score": 0,
+    "Country": "India",
+    "Program": "Computer Science (MS)"
+  },
+  {
+    "id": "294",
+    "GPA": 2.92,
+    "GRE_Total": 0,
+    "IELTS_Score": 0,
+    "Country": "India",
+    "Program": "Computer Science (MS)"
+  },
+  {
+    "id": "295",
+    "GPA": 2.87,
+    "GRE_Total": 0,
+    "IELTS_Score": 0,
+    "Country": "Bangladesh",
+    "Program": "Computer Science (MS)"
+  },
+  {
+    "id": "296",
+    "GPA": 2.84,
+    "GRE_Total": 0,
+    "IELTS_Score": 0,
+    "Country": "Domestic",
+    "Program": "Computer Science (MS)"
+  },
+  {
+    "id": "297",
+    "GPA": 2.83,
+    "GRE_Total": 0,
+    "IELTS_Score": 0,
+    "Country": "India",
+    "Program": "Computer Science (MS)"
+  },
+  {
+    "id": "298",
+    "GPA": 2.63,
+    "GRE_Total": 0,
+    "IELTS_Score": 94,
+    "Country": "India",
+    "Program": "Computer Science (MS)"
+  },
+  {
+    "id": "299",
+    "GPA": 2.61,
+    "GRE_Total": 0,
+    "IELTS_Score": 0,
+    "Country": "India",
+    "Program": "Computer Science (MS)"
+  },
+  {
+    "id": "300",
+    "GPA": 2.5,
+    "GRE_Total": 0,
+    "IELTS_Score": 0,
+    "Country": "India",
+    "Program": "Computer Science (MS)"
+  },
+  {
+    "id": "301",
+    "GPA": 2.34,
+    "GRE_Total": 0,
+    "IELTS_Score": 0,
+    "Country": "Bangladesh",
+    "Program": "Computer Science (MS)"
+  },
+  {
+    "id": "302",
+    "GPA": 3.59,
+    "GRE_Total": 0,
+    "IELTS_Score": 7,
+    "Country": "India",
+    "Program": "Computer Science (MS)"
+  },
+  {
+    "id": "303",
+    "GPA": 3.4,
+    "GRE_Total": 0,
+    "IELTS_Score": 7.5,
+    "Country": "Nepal",
+    "Program": "Computer Science (MS)"
+  },
+  {
+    "id": "304",
+    "GPA": 3.62,
+    "GRE_Total": 0,
+    "IELTS_Score": 0,
+    "Country": "Pakistan",
+    "Program": "Computer Science (MS)"
+  },
+  {
+    "id": "305",
+    "GPA": 3.07,
+    "GRE_Total": 0,
+    "IELTS_Score": 92,
+    "Country": "India",
+    "Program": "Computer Science (MS)"
+  },
+  {
+    "id": "306",
+    "GPA": 3.3,
+    "GRE_Total": 0,
+    "IELTS_Score": 0,
+    "Country": "Pakistan",
+    "Program": "Computer Science (MS)"
+  },
+  {
+    "id": "307",
+    "GPA": 3.6,
+    "GRE_Total": 0,
+    "IELTS_Score": 0,
+    "Country": "Pakistan",
+    "Program": "Computer Science (MS)"
+  },
+  {
+    "id": "308",
+    "GPA": 2.81,
+    "GRE_Total": 0,
+    "IELTS_Score": 0,
+    "Country": "India",
+    "Program": "Computer Science (MS)"
+  },
+  {
+    "id": "309",
+    "GPA": 3.94,
+    "GRE_Total": 0,
+    "IELTS_Score": 8,
+    "Country": "Iran",
+    "Program": "Computer Science (MS)"
+  },
+  {
+    "id": "310",
+    "GPA": 3.91,
+    "GRE_Total": 0,
+    "IELTS_Score": 0,
+    "Country": "Domestic",
+    "Program": "Computer Science (MS)"
+  },
+  {
+    "id": "311",
+    "GPA": 3.89,
+    "GRE_Total": 0,
+    "IELTS_Score": 7.5,
+    "Country": "Bangladesh",
+    "Program": "Computer Science (MS)"
+  },
+  {
+    "id": "312",
+    "GPA": 3.89,
+    "GRE_Total": 0,
+    "IELTS_Score": 7,
+    "Country": "Bangladesh",
+    "Program": "Computer Science (MS)"
+  },
+  {
+    "id": "313",
+    "GPA": 3.83,
+    "GRE_Total": 0,
+    "IELTS_Score": 0,
+    "Country": "Nigeria",
+    "Program": "Computer Science (MS)"
+  },
+  {
+    "id": "314",
+    "GPA": 3.83,
+    "GRE_Total": 0,
+    "IELTS_Score": 0,
+    "Country": "Myanmar",
+    "Program": "Computer Science (MS)"
+  },
+  {
+    "id": "315",
+    "GPA": 3.83,
+    "GRE_Total": 0,
+    "IELTS_Score": 0,
+    "Country": "Nepal",
+    "Program": "Computer Science (MS)"
+  },
+  {
+    "id": "316",
+    "GPA": 3.82,
+    "GRE_Total": 0,
+    "IELTS_Score": 0,
+    "Country": "Iran",
+    "Program": "Computer Science (MS)"
+  },
+  {
+    "id": "317",
+    "GPA": 3.82,
+    "GRE_Total": 0,
+    "IELTS_Score": 0,
+    "Country": "Nepal",
+    "Program": "Computer Science (MS)"
+  },
+  {
+    "id": "318",
+    "GPA": 3.81,
+    "GRE_Total": 0,
+    "IELTS_Score": 6.5,
+    "Country": "India",
+    "Program": "Computer Science (MS)"
+  },
+  {
+    "id": "319",
+    "GPA": 3.8,
+    "GRE_Total": 0,
+    "IELTS_Score": 0,
+    "Country": "Bangladesh",
+    "Program": "Computer Science (MS)"
+  },
+  {
+    "id": "320",
+    "GPA": 3.76,
+    "GRE_Total": 0,
+    "IELTS_Score": 7,
+    "Country": "India",
+    "Program": "Computer Science (MS)"
+  },
+  {
+    "id": "321",
+    "GPA": 3.75,
+    "GRE_Total": 0,
+    "IELTS_Score": 6.5,
+    "Country": "India",
+    "Program": "Computer Science (MS)"
+  },
+  {
+    "id": "322",
+    "GPA": 3.75,
+    "GRE_Total": 0,
+    "IELTS_Score": 7,
+    "Country": "India",
+    "Program": "Computer Science (MS)"
+  },
+  {
+    "id": "323",
+    "GPA": 3.74,
+    "GRE_Total": 0,
+    "IELTS_Score": 0,
+    "Country": "Nigeria",
+    "Program": "Computer Science (MS)"
+  },
+  {
+    "id": "324",
+    "GPA": 3.72,
+    "GRE_Total": 0,
+    "IELTS_Score": 0,
+    "Country": "Bangladesh",
+    "Program": "Software & Security Engineering (MS)"
+  },
+  {
+    "id": "325",
+    "GPA": 3.7,
+    "GRE_Total": 0,
+    "IELTS_Score": 106,
+    "Country": "Venezuela",
+    "Program": "Computer Science (MS)"
+  },
+  {
+    "id": "326",
+    "GPA": 3.69,
+    "GRE_Total": 0,
+    "IELTS_Score": 0,
+    "Country": "Pakistan",
+    "Program": "Computer Science (MS)"
+  },
+  {
+    "id": "327",
+    "GPA": 3.68,
+    "GRE_Total": 0,
+    "IELTS_Score": 7.5,
+    "Country": "India",
+    "Program": "Computer Science (MS)"
+  },
+  {
+    "id": "328",
+    "GPA": 3.67,
+    "GRE_Total": 0,
+    "IELTS_Score": 86,
+    "Country": "India",
+    "Program": "Computer Science (MS)"
+  },
+  {
+    "id": "329",
+    "GPA": 3.67,
+    "GRE_Total": 0,
+    "IELTS_Score": 0,
+    "Country": "Bangladesh",
+    "Program": "Computer Science (MS)"
+  },
+  {
+    "id": "330",
+    "GPA": 3.67,
+    "GRE_Total": 0,
+    "IELTS_Score": 107,
+    "Country": "Iran",
+    "Program": "Computer Science (MS)"
+  },
+  {
+    "id": "331",
+    "GPA": 3.66,
+    "GRE_Total": 0,
+    "IELTS_Score": 7.5,
+    "Country": "India",
+    "Program": "Computer Science (MS)"
+  },
+  {
+    "id": "332",
+    "GPA": 3.66,
+    "GRE_Total": 0,
+    "IELTS_Score": 8,
+    "Country": "India",
+    "Program": "Computer Science (MS)"
+  },
+  {
+    "id": "333",
+    "GPA": 3.648,
+    "GRE_Total": 0,
+    "IELTS_Score": 7,
+    "Country": "NA",
+    "Program": "Computer Science (MS)"
+  },
+  {
+    "id": "334",
+    "GPA": 3.64,
+    "GRE_Total": 0,
+    "IELTS_Score": 0,
+    "Country": "Domestic",
+    "Program": "Computer Science (MS)"
+  },
+  {
+    "id": "335",
+    "GPA": 3.61,
+    "GRE_Total": 0,
+    "IELTS_Score": 87,
+    "Country": "India",
+    "Program": "Computer Science (MS)"
+  },
+  {
+    "id": "336",
+    "GPA": 3.6,
+    "GRE_Total": 0,
+    "IELTS_Score": 6.5,
+    "Country": "India",
+    "Program": "Computer Science (MS)"
+  },
+  {
+    "id": "337",
+    "GPA": 3.6,
+    "GRE_Total": 0,
+    "IELTS_Score": 7.5,
+    "Country": "Bangladesh",
+    "Program": "Computer Science (MS)"
+  },
+  {
+    "id": "338",
+    "GPA": 3.59,
+    "GRE_Total": 0,
+    "IELTS_Score": 0,
+    "Country": "Domestic",
+    "Program": "Software & Security Engineering (MS)"
+  },
+  {
+    "id": "339",
+    "GPA": 3.57,
+    "GRE_Total": 0,
+    "IELTS_Score": 7.5,
+    "Country": "India",
+    "Program": "Computer Science (MS)"
+  },
+  {
+    "id": "340",
+    "GPA": 3.57,
+    "GRE_Total": 0,
+    "IELTS_Score": 7,
+    "Country": "Bangladesh",
+    "Program": "Computer Science (MS)"
+  },
+  {
+    "id": "341",
+    "GPA": 3.56,
+    "GRE_Total": 0,
+    "IELTS_Score": 87,
+    "Country": "Pakistan",
+    "Program": "Computer Science (MS)"
+  },
+  {
+    "id": "342",
+    "GPA": 3.55,
+    "GRE_Total": 0,
+    "IELTS_Score": 6.5,
+    "Country": "India",
+    "Program": "Computer Science (MS)"
+  },
+  {
+    "id": "343",
+    "GPA": 3.54,
+    "GRE_Total": 0,
+    "IELTS_Score": 8,
+    "Country": "New Caledonia",
+    "Program": "Computer Science (MS)"
+  },
+  {
+    "id": "344",
+    "GPA": 3.54,
+    "GRE_Total": 0,
+    "IELTS_Score": 0,
+    "Country": "Bangladesh",
+    "Program": "Computer Science (MS)"
+  },
+  {
+    "id": "345",
+    "GPA": 3.53,
+    "GRE_Total": 0,
+    "IELTS_Score": 7.5,
+    "Country": "Nepal",
+    "Program": "Software & Security Engineering (MS)"
+  },
+  {
+    "id": "346",
+    "GPA": 3.52,
+    "GRE_Total": 0,
+    "IELTS_Score": 0,
+    "Country": "India",
+    "Program": "Computer Science (MS)"
+  },
+  {
+    "id": "347",
+    "GPA": 3.52,
+    "GRE_Total": 0,
+    "IELTS_Score": 0,
+    "Country": "Permanent Resident",
+    "Program": "Computer Science (MS)"
+  },
+  {
+    "id": "348",
+    "GPA": 3.51,
+    "GRE_Total": 0,
+    "IELTS_Score": 0,
+    "Country": "Pakistan",
+    "Program": "Computer Science (MS)"
+  },
+  {
+    "id": "349",
+    "GPA": 3.5,
+    "GRE_Total": 0,
+    "IELTS_Score": 8,
+    "Country": "Nepal",
+    "Program": "Computer Science (MS)"
+  },
+  {
+    "id": "350",
+    "GPA": 3.481,
+    "GRE_Total": 0,
+    "IELTS_Score": 7.5,
+    "Country": "Bangladesh",
+    "Program": "Computer Science (MS)"
+  },
+  {
+    "id": "351",
+    "GPA": 3.48,
+    "GRE_Total": 0,
+    "IELTS_Score": 7.5,
+    "Country": "India",
+    "Program": "Computer Science (MS)"
+  },
+  {
+    "id": "352",
+    "GPA": 3.48,
+    "GRE_Total": 0,
+    "IELTS_Score": 0,
+    "Country": "Domestic",
+    "Program": "Software & Security Engineering (MS) - accelerated"
+  },
+  {
+    "id": "353",
+    "GPA": 3.47,
+    "GRE_Total": 0,
+    "IELTS_Score": 7,
+    "Country": "Nepal",
+    "Program": "Computer Science (MS)"
+  },
+  {
+    "id": "354",
+    "GPA": 3.47,
+    "GRE_Total": 0,
+    "IELTS_Score": 7.5,
+    "Country": "Nepal",
+    "Program": "Computer Science (MS)"
+  },
+  {
+    "id": "355",
+    "GPA": 3.47,
+    "GRE_Total": 0,
+    "IELTS_Score": 8,
+    "Country": "Nepal",
+    "Program": "Computer Science (MS)"
+  },
+  {
+    "id": "356",
+    "GPA": 3.45,
+    "GRE_Total": 0,
+    "IELTS_Score": 7,
+    "Country": "Bangladesh",
+    "Program": "Computer Science (MS)"
+  },
+  {
+    "id": "357",
+    "GPA": 3.44,
+    "GRE_Total": 0,
+    "IELTS_Score": 8,
+    "Country": "India",
+    "Program": "Computer Science (MS)"
+  },
+  {
+    "id": "358",
+    "GPA": 3.44,
+    "GRE_Total": 0,
+    "IELTS_Score": 7,
+    "Country": "Bangladesh",
+    "Program": "Computer Science (MS)"
+  },
+  {
+    "id": "359",
+    "GPA": 3.43,
+    "GRE_Total": 0,
+    "IELTS_Score": 0,
+    "Country": "Domestic",
+    "Program": "Computer Science (MS)"
+  },
+  {
+    "id": "360",
+    "GPA": 3.43,
+    "GRE_Total": 0,
+    "IELTS_Score": 0,
+    "Country": "Domestic",
+    "Program": "Software & Security Engineering (MS)"
+  },
+  {
+    "id": "361",
+    "GPA": 3.42,
+    "GRE_Total": 0,
+    "IELTS_Score": 6.5,
+    "Country": "Nepal",
+    "Program": "Computer Science (MS)"
+  },
+  {
+    "id": "362",
+    "GPA": 3.42,
+    "GRE_Total": 0,
+    "IELTS_Score": 7,
+    "Country": "India",
+    "Program": "Computer Science (MS)"
+  },
+  {
+    "id": "363",
+    "GPA": 3.42,
+    "GRE_Total": 0,
+    "IELTS_Score": 7,
+    "Country": "Nepal",
+    "Program": "Computer Science (MS)"
+  },
+  {
+    "id": "364",
+    "GPA": 3.42,
+    "GRE_Total": 0,
+    "IELTS_Score": 7,
+    "Country": "Nepal",
+    "Program": "Computer Science (MS)"
+  },
+  {
+    "id": "365",
+    "GPA": 3.42,
+    "GRE_Total": 0,
+    "IELTS_Score": 6.5,
+    "Country": "India",
+    "Program": "Computer Science (MS)"
+  },
+  {
+    "id": "366",
+    "GPA": 3.41,
+    "GRE_Total": 0,
+    "IELTS_Score": 0,
+    "Country": "NA",
+    "Program": "Computer Science (MS)"
+  },
+  {
+    "id": "367",
+    "GPA": 3.41,
+    "GRE_Total": 0,
+    "IELTS_Score": 7,
+    "Country": "India",
+    "Program": "Computer Science (MS)"
+  },
+  {
+    "id": "368",
+    "GPA": 3.4,
+    "GRE_Total": 0,
+    "IELTS_Score": 6.5,
+    "Country": "Nepal",
+    "Program": "Computer Science (MS)"
+  },
+  {
+    "id": "369",
+    "GPA": 3.4,
+    "GRE_Total": 0,
+    "IELTS_Score": 6.5,
+    "Country": "Nepal",
+    "Program": "Computer Science (MS)"
+  },
+  {
+    "id": "370",
+    "GPA": 3.4,
+    "GRE_Total": 0,
+    "IELTS_Score": 93,
+    "Country": "India",
+    "Program": "Computer Science (MS)"
+  },
+  {
+    "id": "371",
+    "GPA": 3.4,
+    "GRE_Total": 0,
+    "IELTS_Score": 82,
+    "Country": "India",
+    "Program": "Computer Science (MS)"
+  },
+  {
+    "id": "372",
+    "GPA": 3.39,
+    "GRE_Total": 0,
+    "IELTS_Score": 7,
+    "Country": "India",
+    "Program": "Computer Science (MS)"
+  },
+  {
+    "id": "373",
+    "GPA": 3.39,
+    "GRE_Total": 0,
+    "IELTS_Score": 0,
+    "Country": "India",
+    "Program": "Computer Science (MS)"
+  },
+  {
+    "id": "374",
+    "GPA": 3.39,
+    "GRE_Total": 0,
+    "IELTS_Score": 7,
+    "Country": "Nepal",
+    "Program": "Computer Science (MS)"
+  },
+  {
+    "id": "375",
+    "GPA": 3.36,
+    "GRE_Total": 0,
+    "IELTS_Score": 85,
+    "Country": "India",
+    "Program": "Computer Science (MS)"
+  },
+  {
+    "id": "376",
+    "GPA": 3.35,
+    "GRE_Total": 0,
+    "IELTS_Score": 0,
+    "Country": "Nigeria",
+    "Program": "Computer Science (MS)"
+  },
+  {
+    "id": "377",
+    "GPA": 3.34,
+    "GRE_Total": 0,
+    "IELTS_Score": 104,
+    "Country": "India",
+    "Program": "Computer Science (MS)"
+  },
+  {
+    "id": "378",
+    "GPA": 3.33,
+    "GRE_Total": 0,
+    "IELTS_Score": 105,
+    "Country": "India",
+    "Program": "Computer Science (MS)"
+  },
+  {
+    "id": "379",
+    "GPA": 3.33,
+    "GRE_Total": 0,
+    "IELTS_Score": 7,
+    "Country": "India",
+    "Program": "Computer Science (MS)"
+  },
+  {
+    "id": "380",
+    "GPA": 3.33,
+    "GRE_Total": 0,
+    "IELTS_Score": 6.5,
+    "Country": "Pakistan",
+    "Program": "Computer Science (MS)"
+  },
+  {
+    "id": "381",
+    "GPA": 3.33,
+    "GRE_Total": 0,
+    "IELTS_Score": 7,
+    "Country": "India",
+    "Program": "Computer Science (MS)"
+  },
+  {
+    "id": "382",
+    "GPA": 3.33,
+    "GRE_Total": 0,
+    "IELTS_Score": 0,
+    "Country": "Ghana",
+    "Program": "Computer Science (MS)"
+  },
+  {
+    "id": "383",
+    "GPA": 3.33,
+    "GRE_Total": 0,
+    "IELTS_Score": 6.5,
+    "Country": "India",
+    "Program": "Computer Science (MS)"
+  },
+  {
+    "id": "384",
+    "GPA": 3.33,
+    "GRE_Total": 0,
+    "IELTS_Score": 7,
+    "Country": "Nepal",
+    "Program": "Computer Science (MS)"
+  },
+  {
+    "id": "385",
+    "GPA": 3.32,
+    "GRE_Total": 0,
+    "IELTS_Score": 0,
+    "Country": "Bangladesh",
+    "Program": "Computer Science (MS)"
+  },
+  {
+    "id": "386",
+    "GPA": 3.32,
+    "GRE_Total": 0,
+    "IELTS_Score": 7,
+    "Country": "India",
+    "Program": "Computer Science (MS)"
+  },
+  {
+    "id": "387",
+    "GPA": 3.32,
+    "GRE_Total": 0,
+    "IELTS_Score": 0,
+    "Country": "Unknown",
+    "Program": "Computer Science (MS)"
+  },
+  {
+    "id": "388",
+    "GPA": 3.32,
+    "GRE_Total": 0,
+    "IELTS_Score": 103,
+    "Country": "India",
+    "Program": "Computer Science (MS)"
+  },
+  {
+    "id": "389",
+    "GPA": 3.3,
+    "GRE_Total": 0,
+    "IELTS_Score": 8,
+    "Country": "Nepal",
+    "Program": "Computer Science (MS)"
+  },
+  {
+    "id": "390",
+    "GPA": 3.3,
+    "GRE_Total": 0,
+    "IELTS_Score": 0,
+    "Country": "India",
+    "Program": "Computer Science (MS)"
+  },
+  {
+    "id": "391",
+    "GPA": 3.3,
+    "GRE_Total": 0,
+    "IELTS_Score": 6.5,
+    "Country": "Bangladesh",
+    "Program": "Computer Science (MS)"
+  },
+  {
+    "id": "392",
+    "GPA": 3.3,
+    "GRE_Total": 0,
+    "IELTS_Score": 7,
+    "Country": "Bangladesh",
+    "Program": "Computer Science (MS)"
+  },
+  {
+    "id": "393",
+    "GPA": 3.29,
+    "GRE_Total": 0,
+    "IELTS_Score": 101,
+    "Country": "India",
+    "Program": "Computer Science (MS)"
+  },
+  {
+    "id": "394",
+    "GPA": 3.29,
+    "GRE_Total": 0,
+    "IELTS_Score": 6.5,
+    "Country": "India",
+    "Program": "Computer Science (MS)"
+  },
+  {
+    "id": "395",
+    "GPA": 3.29,
+    "GRE_Total": 0,
+    "IELTS_Score": 6.5,
+    "Country": "India",
+    "Program": "Computer Science (MS)"
+  },
+  {
+    "id": "396",
+    "GPA": 3.28,
+    "GRE_Total": 0,
+    "IELTS_Score": 0,
+    "Country": "Nigeria",
+    "Program": "Computer Science (MS)"
+  },
+  {
+    "id": "397",
+    "GPA": 3.28,
+    "GRE_Total": 0,
+    "IELTS_Score": 97,
+    "Country": "Nepal",
+    "Program": "Computer Science (MS)"
+  },
+  {
+    "id": "398",
+    "GPA": 3.28,
+    "GRE_Total": 0,
+    "IELTS_Score": 99,
+    "Country": "India",
+    "Program": "Computer Science (MS)"
+  },
+  {
+    "id": "399",
+    "GPA": 3.26,
+    "GRE_Total": 0,
+    "IELTS_Score": 72,
+    "Country": "Nepal",
+    "Program": "Computer Science (MS)"
+  },
+  {
+    "id": "400",
+    "GPA": 3.26,
+    "GRE_Total": 0,
+    "IELTS_Score": 93,
+    "Country": "India",
+    "Program": "Computer Science (MS)"
+  },
+  {
+    "id": "401",
+    "GPA": 3.25,
+    "GRE_Total": 0,
+    "IELTS_Score": 89,
+    "Country": "India",
+    "Program": "Computer Science (MS)"
+  },
+  {
+    "id": "402",
+    "GPA": 3.25,
+    "GRE_Total": 0,
+    "IELTS_Score": 7.5,
+    "Country": "NA",
+    "Program": "Computer Science (MS)"
+  },
+  {
+    "id": "403",
+    "GPA": 3.25,
+    "GRE_Total": 0,
+    "IELTS_Score": 7.5,
+    "Country": "India",
+    "Program": "Computer Science (MS)"
+  },
+  {
+    "id": "404",
+    "GPA": 3.25,
+    "GRE_Total": 0,
+    "IELTS_Score": 7.5,
+    "Country": "Nepal",
+    "Program": "Computer Science (MS)"
+  },
+  {
+    "id": "405",
+    "GPA": 3.24,
+    "GRE_Total": 0,
+    "IELTS_Score": 0,
+    "Country": "Ghana",
+    "Program": "Computer Science (MS)"
+  },
+  {
+    "id": "406",
+    "GPA": 3.24,
+    "GRE_Total": 0,
+    "IELTS_Score": 0,
+    "Country": "India",
+    "Program": "Computer Science (MS)"
+  },
+  {
+    "id": "407",
+    "GPA": 3.22,
+    "GRE_Total": 0,
+    "IELTS_Score": 0,
+    "Country": "Kenya",
+    "Program": "Software & Security Engineering (MS)"
+  },
+  {
+    "id": "408",
+    "GPA": 3.22,
+    "GRE_Total": 0,
+    "IELTS_Score": 0,
+    "Country": "India",
+    "Program": "Computer Science (MS)"
+  },
+  {
+    "id": "409",
+    "GPA": 3.21,
+    "GRE_Total": 0,
+    "IELTS_Score": 0,
+    "Country": "Unknown",
+    "Program": "Computer Science (MS)"
+  },
+  {
+    "id": "410",
+    "GPA": 3.2,
+    "GRE_Total": 0,
+    "IELTS_Score": 7,
+    "Country": "India",
+    "Program": "Computer Science (MS)"
+  },
+  {
+    "id": "411",
+    "GPA": 3.19,
+    "GRE_Total": 0,
+    "IELTS_Score": 7,
+    "Country": "India",
+    "Program": "Computer Science (MS)"
+  },
+  {
+    "id": "412",
+    "GPA": 3.18,
+    "GRE_Total": 0,
+    "IELTS_Score": 7.5,
+    "Country": "Nepal",
+    "Program": "Computer Science (MS)"
+  },
+  {
+    "id": "413",
+    "GPA": 3.18,
+    "GRE_Total": 0,
+    "IELTS_Score": 84,
+    "Country": "India",
+    "Program": "Computer Science (MS)"
+  },
+  {
+    "id": "414",
+    "GPA": 3.17,
+    "GRE_Total": 0,
+    "IELTS_Score": 0,
+    "Country": "Bangladesh",
+    "Program": "Computer Science (MS)"
+  },
+  {
+    "id": "415",
+    "GPA": 3.15,
+    "GRE_Total": 0,
+    "IELTS_Score": 0,
+    "Country": "Gahna",
+    "Program": "Computer Science (MS)"
+  },
+  {
+    "id": "416",
+    "GPA": 3.13,
+    "GRE_Total": 0,
+    "IELTS_Score": 7,
+    "Country": "Bangladesh",
+    "Program": "Computer Science (MS)"
+  },
+  {
+    "id": "417",
+    "GPA": 3.13,
+    "GRE_Total": 0,
+    "IELTS_Score": 6.5,
+    "Country": "Nepal",
+    "Program": "Computer Science (MS)"
+  },
+  {
+    "id": "418",
+    "GPA": 3.13,
+    "GRE_Total": 0,
+    "IELTS_Score": 96,
+    "Country": "India",
+    "Program": "Computer Science (MS)"
+  },
+  {
+    "id": "419",
+    "GPA": 3.13,
+    "GRE_Total": 0,
+    "IELTS_Score": 7,
+    "Country": "India",
+    "Program": "Computer Science (MS)"
+  },
+  {
+    "id": "420",
+    "GPA": 3.12,
+    "GRE_Total": 0,
+    "IELTS_Score": 7,
+    "Country": "India",
+    "Program": "Computer Science (MS)"
+  },
+  {
+    "id": "421",
+    "GPA": 3.11,
+    "GRE_Total": 0,
+    "IELTS_Score": 0,
+    "Country": "Bangladesh",
+    "Program": "Computer Science (MS)"
+  },
+  {
+    "id": "422",
+    "GPA": 3.11,
+    "GRE_Total": 0,
+    "IELTS_Score": 98,
+    "Country": "India",
+    "Program": "Computer Science (MS)"
+  },
+  {
+    "id": "423",
+    "GPA": 3.11,
+    "GRE_Total": 0,
+    "IELTS_Score": 8,
+    "Country": "Nepal",
+    "Program": "Computer Science (MS)"
+  },
+  {
+    "id": "424",
+    "GPA": 3.1,
+    "GRE_Total": 0,
+    "IELTS_Score": 7.5,
+    "Country": "Nepal",
+    "Program": "Computer Science (MS)"
+  },
+  {
+    "id": "425",
+    "GPA": 3.1,
+    "GRE_Total": 0,
+    "IELTS_Score": 92,
+    "Country": "Iran",
+    "Program": "Computer Science (MS)"
+  },
+  {
+    "id": "426",
+    "GPA": 3.1,
+    "GRE_Total": 0,
+    "IELTS_Score": 101,
+    "Country": "India",
+    "Program": "Computer Science (MS)"
+  },
+  {
+    "id": "427",
+    "GPA": 3.09,
+    "GRE_Total": 0,
+    "IELTS_Score": 6.5,
+    "Country": "Bangladesh",
+    "Program": "Computer Science (MS)"
+  },
+  {
+    "id": "428",
+    "GPA": 3.07,
+    "GRE_Total": 0,
+    "IELTS_Score": 7,
+    "Country": "Nepal",
+    "Program": "Computer Science (MS)"
+  },
+  {
+    "id": "429",
+    "GPA": 3.06,
+    "GRE_Total": 0,
+    "IELTS_Score": 98,
+    "Country": "NA",
+    "Program": "Computer Science (MS)"
+  },
+  {
+    "id": "430",
+    "GPA": 3.05,
+    "GRE_Total": 0,
+    "IELTS_Score": 96,
+    "Country": "Ecuador",
+    "Program": "Software & Security Engineering (MS)"
+  },
+  {
+    "id": "431",
+    "GPA": 3.05,
+    "GRE_Total": 0,
+    "IELTS_Score": 0,
+    "Country": "India",
+    "Program": "Computer Science (MS)"
+  },
+  {
+    "id": "432",
+    "GPA": 3.04,
+    "GRE_Total": 0,
+    "IELTS_Score": 6.5,
+    "Country": "India",
+    "Program": "Computer Science (MS)"
+  },
+  {
+    "id": "433",
+    "GPA": 3.04,
+    "GRE_Total": 0,
+    "IELTS_Score": 0,
+    "Country": "Nigeria",
+    "Program": "Software & Security Engineering (MS)"
+  },
+  {
+    "id": "434",
+    "GPA": 3.02,
+    "GRE_Total": 0,
+    "IELTS_Score": 0,
+    "Country": "Ghana",
+    "Program": "Computer Science (MS)"
+  },
+  {
+    "id": "435",
+    "GPA": 3.01,
+    "GRE_Total": 0,
+    "IELTS_Score": 0,
+    "Country": "India",
+    "Program": "Computer Science (MS)"
+  },
+  {
+    "id": "436",
+    "GPA": 3.01,
+    "GRE_Total": 0,
+    "IELTS_Score": 6.5,
+    "Country": "India",
+    "Program": "Computer Science (MS)"
+  },
+  {
+    "id": "437",
+    "GPA": 3,
+    "GRE_Total": 0,
+    "IELTS_Score": 87,
+    "Country": "India",
+    "Program": "Computer Science (MS)"
+  },
+  {
+    "id": "438",
+    "GPA": 3,
+    "GRE_Total": 0,
+    "IELTS_Score": 0,
+    "Country": "Ghana",
+    "Program": "Computer Science (MS)"
+  },
+  {
+    "id": "439",
+    "GPA": 2.99,
+    "GRE_Total": 0,
+    "IELTS_Score": 7.5,
+    "Country": "India",
+    "Program": "Computer Science (MS)"
+  },
+  {
+    "id": "440",
+    "GPA": 2.98,
+    "GRE_Total": 0,
+    "IELTS_Score": 8,
+    "Country": "India",
+    "Program": "Computer Science (MS)"
+  },
+  {
+    "id": "441",
+    "GPA": 2.95,
+    "GRE_Total": 0,
+    "IELTS_Score": 108,
+    "Country": "India",
+    "Program": "Computer Science (MS)"
+  },
+  {
+    "id": "442",
+    "GPA": 2.95,
+    "GRE_Total": 0,
+    "IELTS_Score": 0,
+    "Country": "Bangladesh",
+    "Program": "Computer Science (MS)"
+  },
+  {
+    "id": "443",
+    "GPA": 2.94,
+    "GRE_Total": 0,
+    "IELTS_Score": 6.5,
+    "Country": "India",
+    "Program": "Computer Science (MS)"
+  },
+  {
+    "id": "444",
+    "GPA": 2.94,
+    "GRE_Total": 0,
+    "IELTS_Score": 6.5,
+    "Country": "India",
+    "Program": "Computer Science (MS)"
+  },
+  {
+    "id": "445",
+    "GPA": 2.93,
+    "GRE_Total": 0,
+    "IELTS_Score": 0,
+    "Country": "NA",
+    "Program": "Computer Science (MS)"
+  },
+  {
+    "id": "446",
+    "GPA": 2.93,
+    "GRE_Total": 0,
+    "IELTS_Score": 0,
+    "Country": "India",
+    "Program": "Computer Science (MS)"
+  },
+  {
+    "id": "447",
+    "GPA": 2.92,
+    "GRE_Total": 0,
+    "IELTS_Score": 7,
+    "Country": "India",
+    "Program": "Computer Science (MS)"
+  },
+  {
+    "id": "448",
+    "GPA": 2.92,
+    "GRE_Total": 0,
+    "IELTS_Score": 0,
+    "Country": "India",
+    "Program": "Computer Science (MS)"
+  },
+  {
+    "id": "449",
+    "GPA": 2.88,
+    "GRE_Total": 0,
+    "IELTS_Score": 0,
+    "Country": "Nepal",
+    "Program": "Computer Science (MS)"
+  },
+  {
+    "id": "450",
+    "GPA": 2.82,
+    "GRE_Total": 0,
+    "IELTS_Score": 100,
+    "Country": "India",
+    "Program": "Computer Science (MS)"
+  },
+  {
+    "id": "451",
+    "GPA": 2.8,
+    "GRE_Total": 0,
+    "IELTS_Score": 6.5,
+    "Country": "India",
+    "Program": "Computer Science (MS)"
+  },
+  {
+    "id": "452",
+    "GPA": 2.8,
+    "GRE_Total": 0,
+    "IELTS_Score": 92,
+    "Country": "India",
+    "Program": "Computer Science (MS)"
+  },
+  {
+    "id": "453",
+    "GPA": 2.79,
+    "GRE_Total": 0,
+    "IELTS_Score": 88,
+    "Country": "Nepal",
+    "Program": "Computer Science (MS)"
+  },
+  {
+    "id": "454",
+    "GPA": 2.79,
+    "GRE_Total": 0,
+    "IELTS_Score": 6.5,
+    "Country": "India",
+    "Program": "Software & Security Engineering (MS)"
+  },
+  {
+    "id": "455",
+    "GPA": 2.78,
+    "GRE_Total": 0,
+    "IELTS_Score": 0,
+    "Country": "Bangladesh",
+    "Program": "Computer Science (MS)"
+  },
+  {
+    "id": "456",
+    "GPA": 2.76,
+    "GRE_Total": 0,
+    "IELTS_Score": 0,
+    "Country": "Domestic",
+    "Program": "Software Engineering Certificate"
+  },
+  {
+    "id": "457",
+    "GPA": 2.74,
+    "GRE_Total": 0,
+    "IELTS_Score": 0,
+    "Country": "Nigeria",
+    "Program": "Computer Science (MS)"
+  },
+  {
+    "id": "458",
+    "GPA": 2.71,
+    "GRE_Total": 0,
+    "IELTS_Score": 0,
+    "Country": "Pakistan",
+    "Program": "Computer Science (MS)"
+  },
+  {
+    "id": "459",
+    "GPA": 2.68,
+    "GRE_Total": 0,
+    "IELTS_Score": 83,
+    "Country": "India",
+    "Program": "Computer Science (MS)"
+  },
+  {
+    "id": "460",
+    "GPA": 2.66,
+    "GRE_Total": 0,
+    "IELTS_Score": 0,
+    "Country": "Domestic",
+    "Program": "Computer Science (MS)"
+  },
+  {
+    "id": "461",
+    "GPA": 2.63,
+    "GRE_Total": 0,
+    "IELTS_Score": 7,
+    "Country": "Nepal",
+    "Program": "Computer Science (MS)"
+  },
+  {
+    "id": "462",
+    "GPA": 2.61,
+    "GRE_Total": 0,
+    "IELTS_Score": 8.5,
+    "Country": "India",
+    "Program": "Software & Security Engineering (MS)"
+  },
+  {
+    "id": "463",
+    "GPA": 2.61,
+    "GRE_Total": 0,
+    "IELTS_Score": 0,
+    "Country": "India",
+    "Program": "Computer Science (MS)"
+  },
+  {
+    "id": "464",
+    "GPA": 2.6,
+    "GRE_Total": 0,
+    "IELTS_Score": 0,
+    "Country": "India",
+    "Program": "Computer Science (MS)"
+  },
+  {
+    "id": "465",
+    "GPA": 2.57,
+    "GRE_Total": 0,
+    "IELTS_Score": 0,
+    "Country": "Domestic",
+    "Program": "Computer Science (MS)"
+  },
+  {
+    "id": "466",
+    "GPA": 2.46,
+    "GRE_Total": 0,
+    "IELTS_Score": 6.5,
+    "Country": "India",
+    "Program": "Computer Science (MS)"
+  },
+  {
+    "id": "467",
+    "GPA": 2.38,
+    "GRE_Total": 0,
+    "IELTS_Score": 8,
+    "Country": "India",
+    "Program": "Software & Security Engineering (MS)"
+  },
+  {
+    "id": "468",
+    "GPA": 2.28,
+    "GRE_Total": 0,
+    "IELTS_Score": 0,
+    "Country": "Nigeria",
+    "Program": "Computer Science (MS)"
+  },
+  {
+    "id": "469",
+    "GPA": 2.25,
+    "GRE_Total": 0,
+    "IELTS_Score": 0,
+    "Country": "Pakistan",
+    "Program": "Computer Science (MS)"
+  },
+  {
+    "id": "470",
+    "GPA": 2.15,
+    "GRE_Total": 0,
+    "IELTS_Score": 0,
+    "Country": "Nigeria",
+    "Program": "Software & Security Engineering (MS)"
+  },
+  {
+    "id": "471",
+    "GPA": 1.67,
+    "GRE_Total": 0,
+    "IELTS_Score": 0,
+    "Country": "Nigeria",
+    "Program": "Computer Science (MS)"
+  },
+  {
+    "id": "472",
+    "GPA": 0,
+    "GRE_Total": 0,
+    "IELTS_Score": 0,
+    "Country": "Albania",
+    "Program": "Computer Science (MS)"
+  },
+  {
+    "id": "473",
+    "GPA": 3.53,
+    "GRE_Total": 0,
+    "IELTS_Score": 97,
+    "Country": "Iran, Islamic Republic of",
+    "Program": "Computer Science (MS)"
+  },
+  {
+    "id": "474",
+    "GPA": 3.4,
+    "GRE_Total": 0,
+    "IELTS_Score": 7,
+    "Country": "India",
+    "Program": "Computer Science (MS)"
+  },
+  {
+    "id": "475",
+    "GPA": 3.35,
+    "GRE_Total": 0,
+    "IELTS_Score": 114,
+    "Country": "Iran, Islamic Republic of",
+    "Program": "Software & Security Engineering (MS)"
+  },
+  {
+    "id": "476",
+    "GPA": 3.85,
+    "GRE_Total": 0,
+    "IELTS_Score": 0,
+    "Country": "Unknown",
+    "Program": "Computer Science (MS)"
+  },
+  {
+    "id": "477",
+    "GPA": 2.97,
+    "GRE_Total": 0,
+    "IELTS_Score": 0,
+    "Country": "Unknown",
+    "Program": "Computer Science (MS) - Accelerated Program"
+  },
+  {
+    "id": "478",
+    "GPA": 3.41,
+    "GRE_Total": 0,
+    "IELTS_Score": 6.5,
+    "Country": "Iran, Islamic Republic of",
+    "Program": "Computer Science (MS)"
+  },
+  {
+    "id": "479",
+    "GPA": 2.57,
+    "GRE_Total": 0,
+    "IELTS_Score": 0,
+    "Country": "Bangladesh",
+    "Program": "Computer Science (MS)"
+  },
+  {
+    "id": "480",
+    "GPA": 3,
+    "GRE_Total": 0,
+    "IELTS_Score": 95,
+    "Country": "India",
+    "Program": "Computer Science (MS)"
+  },
+  {
+    "id": "481",
+    "GPA": 3.45,
+    "GRE_Total": 0,
+    "IELTS_Score": 0,
+    "Country": "Nepal",
+    "Program": "Computer Science (MS)"
+  },
+  {
+    "id": "482",
+    "GPA": 2.78,
+    "GRE_Total": 0,
+    "IELTS_Score": 6.5,
+    "Country": "India",
+    "Program": "Computer Science (MS)"
+  },
+  {
+    "id": "483",
+    "GPA": 2.66,
+    "GRE_Total": 0,
+    "IELTS_Score": 0,
+    "Country": "Unknown",
+    "Program": "Computer Science (MS)"
+  },
+  {
+    "id": "484",
+    "GPA": 3.24,
+    "GRE_Total": 0,
+    "IELTS_Score": 7,
+    "Country": "India",
+    "Program": "Computer Science (MS)"
+  },
+  {
+    "id": "485",
+    "GPA": 3.72,
+    "GRE_Total": 0,
+    "IELTS_Score": 0,
+    "Country": "Unknown",
+    "Program": "Computer Science (MS) - Accelerated Program"
+  },
+  {
+    "id": "486",
+    "GPA": 3.83,
+    "GRE_Total": 0,
+    "IELTS_Score": 0,
+    "Country": "India",
+    "Program": "Computer Science (MS)"
+  },
+  {
+    "id": "487",
+    "GPA": 3.81,
+    "GRE_Total": 0,
+    "IELTS_Score": 7,
+    "Country": "India",
+    "Program": "Computer Science (MS)"
+  },
+  {
+    "id": "488",
+    "GPA": 3.43,
+    "GRE_Total": 0,
+    "IELTS_Score": 7.5,
+    "Country": "India",
+    "Program": "Software & Security Engineering (MS)"
+  },
+  {
+    "id": "489",
+    "GPA": 3.44,
+    "GRE_Total": 0,
+    "IELTS_Score": 7,
+    "Country": "India",
+    "Program": "Computer Science (MS)"
+  },
+  {
+    "id": "490",
+    "GPA": 3.67,
+    "GRE_Total": 0,
+    "IELTS_Score": 107,
+    "Country": "Iran, Islamic Republic of",
+    "Program": "Computer Science (MS)"
+  },
+  {
+    "id": "491",
+    "GPA": 2.41,
+    "GRE_Total": 0,
+    "IELTS_Score": 91,
+    "Country": "Iran, Islamic Republic of",
+    "Program": "Computer Science (MS)"
+  },
+  {
+    "id": "492",
+    "GPA": 2.83,
+    "GRE_Total": 0,
+    "IELTS_Score": 0,
+    "Country": "Unknown",
+    "Program": "Computer Science (MS)"
+  },
+  {
+    "id": "493",
+    "GPA": 2.71,
+    "GRE_Total": 0,
+    "IELTS_Score": 8,
+    "Country": "India",
+    "Program": "Software & Security Engineering (MS)"
+  },
+  {
+    "id": "494",
+    "GPA": 3.72,
+    "GRE_Total": 0,
+    "IELTS_Score": 6,
+    "Country": "India",
+    "Program": "Computer Science (MS)"
+  },
+  {
+    "id": "495",
+    "GPA": 2.82,
+    "GRE_Total": 0,
+    "IELTS_Score": 0,
+    "Country": "India",
+    "Program": "Computer Science (MS)"
+  },
+  {
+    "id": "496",
+    "GPA": 2.88,
+    "GRE_Total": 0,
+    "IELTS_Score": 0,
+    "Country": "Ghana",
+    "Program": "Software & Security Engineering (MS)"
+  },
+  {
+    "id": "497",
+    "GPA": 3.13,
+    "GRE_Total": 0,
+    "IELTS_Score": 85,
+    "Country": "India",
+    "Program": "Computer Science (MS)"
+  },
+  {
+    "id": "498",
+    "GPA": 3.05,
+    "GRE_Total": 0,
+    "IELTS_Score": 0,
+    "Country": "India",
+    "Program": "Computer Science (MS)"
+  },
+  {
+    "id": "499",
+    "GPA": 3.39,
+    "GRE_Total": 0,
+    "IELTS_Score": 0,
+    "Country": "Unknown",
+    "Program": "Software & Security Engineering (MS)"
+  },
+  {
+    "id": "500",
+    "GPA": 2.84,
+    "GRE_Total": 0,
+    "IELTS_Score": 0,
+    "Country": "India",
+    "Program": "Computer Science (MS)"
+  },
+  {
+    "id": "501",
+    "GPA": 3.23,
+    "GRE_Total": 0,
+    "IELTS_Score": 0,
+    "Country": "India",
+    "Program": "Computer Science (MS)"
+  },
+  {
+    "id": "502",
+    "GPA": 3.23,
+    "GRE_Total": 0,
+    "IELTS_Score": 0,
+    "Country": "Pakistan",
+    "Program": "Computer Science (MS)"
+  },
+  {
+    "id": "503",
+    "GPA": 1.8,
+    "GRE_Total": 0,
+    "IELTS_Score": 0,
+    "Country": "India",
+    "Program": "Computer Science (MS)"
+  },
+  {
+    "id": "504",
+    "GPA": 3.52,
+    "GRE_Total": 0,
+    "IELTS_Score": 0,
+    "Country": "Unknown",
+    "Program": "Computer Science (MS)"
+  },
+  {
+    "id": "505",
+    "GPA": 3.66,
+    "GRE_Total": 0,
+    "IELTS_Score": 7,
+    "Country": "India",
+    "Program": "Computer Science (MS)"
+  },
+  {
+    "id": "506",
+    "GPA": 2.86,
+    "GRE_Total": 0,
+    "IELTS_Score": 0,
+    "Country": "Nepal",
+    "Program": "Computer Science (MS)"
+  },
+  {
+    "id": "507",
+    "GPA": 2.92,
+    "GRE_Total": 0,
+    "IELTS_Score": 0,
+    "Country": "India",
+    "Program": "Computer Science (MS)"
+  },
+  {
+    "id": "508",
+    "GPA": 2.88,
+    "GRE_Total": 0,
+    "IELTS_Score": 0,
+    "Country": "India",
+    "Program": "Computer Science (MS)"
+  },
+  {
+    "id": "509",
+    "GPA": 3.49,
+    "GRE_Total": 0,
+    "IELTS_Score": 0,
+    "Country": "Unknown",
+    "Program": "Computer Science (MS)"
+  },
+  {
+    "id": "510",
+    "GPA": 3.07,
+    "GRE_Total": 0,
+    "IELTS_Score": 0,
+    "Country": "Pakistan",
+    "Program": "Computer Science (MS)"
+  },
+  {
+    "id": "511",
+    "GPA": 3.96,
+    "GRE_Total": 0,
+    "IELTS_Score": 0,
+    "Country": "India",
+    "Program": "Computer Science (MS)"
+  },
+  {
+    "id": "512",
+    "GPA": 2.61,
+    "GRE_Total": 0,
+    "IELTS_Score": 6.5,
+    "Country": "India",
+    "Program": "Computer Science (MS)"
+  },
+  {
+    "id": "513",
+    "GPA": 3.55,
+    "GRE_Total": 0,
+    "IELTS_Score": 86,
+    "Country": "India",
+    "Program": "Computer Science (MS)"
+  },
+  {
+    "id": "514",
+    "GPA": 3.39,
+    "GRE_Total": 0,
+    "IELTS_Score": 0,
+    "Country": "Unknown",
+    "Program": "Computer Science (MS)"
+  },
+  {
+    "id": "515",
+    "GPA": 3.17,
+    "GRE_Total": 0,
+    "IELTS_Score": 0,
+    "Country": "Nepal",
+    "Program": "Computer Science (MS)"
+  },
+  {
+    "id": "516",
+    "GPA": 3.07,
+    "GRE_Total": 0,
+    "IELTS_Score": 103,
+    "Country": "India",
+    "Program": "Computer Science (MS)"
+  },
+  {
+    "id": "517",
+    "GPA": 3.39,
+    "GRE_Total": 0,
+    "IELTS_Score": 0,
+    "Country": "India",
+    "Program": "Computer Science (MS)"
+  },
+  {
+    "id": "518",
+    "GPA": 3.51,
+    "GRE_Total": 0,
+    "IELTS_Score": 7,
+    "Country": "Nepal",
+    "Program": "Computer Science (MS)"
+  },
+  {
+    "id": "519",
+    "GPA": 3.14,
+    "GRE_Total": 0,
+    "IELTS_Score": 0,
+    "Country": "Pakistan",
+    "Program": "Computer Science (MS)"
+  },
+  {
+    "id": "520",
+    "GPA": 3,
+    "GRE_Total": 0,
+    "IELTS_Score": 0,
+    "Country": "India",
+    "Program": "Computer Science (MS)"
+  },
+  {
+    "id": "521",
+    "GPA": 3.09,
+    "GRE_Total": 0,
+    "IELTS_Score": 0,
+    "Country": "Ghana",
+    "Program": "Computer Science (MS)"
+  },
+  {
+    "id": "522",
+    "GPA": 3.45,
+    "GRE_Total": 0,
+    "IELTS_Score": 6.5,
+    "Country": "Pakistan",
+    "Program": "Computer Science (MS)"
+  },
+  {
+    "id": "523",
+    "GPA": 2.55,
+    "GRE_Total": 0,
+    "IELTS_Score": 0,
+    "Country": "India",
+    "Program": "Computer Science (MS)"
+  },
+  {
+    "id": "524",
+    "GPA": 3.54,
+    "GRE_Total": 0,
+    "IELTS_Score": 0,
+    "Country": "Pakistan",
+    "Program": "Computer Science (MS)"
+  },
+  {
+    "id": "525",
+    "GPA": 3.31,
+    "GRE_Total": 0,
+    "IELTS_Score": 7.5,
+    "Country": "Pakistan",
+    "Program": "Computer Science (MS)"
+  },
+  {
+    "id": "526",
+    "GPA": 3.06,
+    "GRE_Total": 0,
+    "IELTS_Score": 0,
+    "Country": "Pakistan",
+    "Program": "Computer Science (MS)"
+  },
+  {
+    "id": "527",
+    "GPA": 3.24,
+    "GRE_Total": 0,
+    "IELTS_Score": 0,
+    "Country": "India",
+    "Program": "Computer Science (MS)"
+  },
+  {
+    "id": "528",
+    "GPA": 3.43,
+    "GRE_Total": 0,
+    "IELTS_Score": 0,
+    "Country": "India",
+    "Program": "Computer Science (MS)"
+  },
+  {
+    "id": "529",
+    "GPA": 3.11,
+    "GRE_Total": 0,
+    "IELTS_Score": 6.5,
+    "Country": "Nepal",
+    "Program": "Computer Science (MS)"
+  },
+  {
+    "id": "530",
+    "GPA": 2.96,
+    "GRE_Total": 0,
+    "IELTS_Score": 83,
+    "Country": "India",
+    "Program": "Computer Science (MS)"
+  },
+  {
+    "id": "531",
+    "GPA": 3.24,
+    "GRE_Total": 0,
+    "IELTS_Score": 0,
+    "Country": "Pakistan",
+    "Program": "Computer Science (MS)"
+  },
+  {
+    "id": "532",
+    "GPA": 3.28,
+    "GRE_Total": 0,
+    "IELTS_Score": 7,
+    "Country": "Bangladesh",
+    "Program": "Computer Science (MS)"
+  },
+  {
+    "id": "533",
+    "GPA": 3.23,
+    "GRE_Total": 0,
+    "IELTS_Score": 0,
+    "Country": "India",
+    "Program": "Computer Science (MS)"
+  },
+  {
+    "id": "534",
+    "GPA": 3.64,
+    "GRE_Total": 0,
+    "IELTS_Score": 6.5,
+    "Country": "Bangladesh",
+    "Program": "Software & Security Engineering (MS)"
+  },
+  {
+    "id": "535",
+    "GPA": 3.06,
+    "GRE_Total": 0,
+    "IELTS_Score": 0,
+    "Country": "Ethiopia",
+    "Program": "Computer Science (MS)"
+  }
+]
