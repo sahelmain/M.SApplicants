@@ -35,10 +35,17 @@ type Applicant = {
 
 const COLORS = ['#0088FE', '#00C49F', '#FFBB28', '#FF8042', '#8884D8', '#82CA9D'];
 
+export const dynamic = 'force-static';
+// force static generation to avoid SSR vendor chunks
+
 export default function Home() {
   const { data: applicants, isLoading, error } = useQuery<Applicant[]>({
     queryKey: ['applicants'],
-    queryFn: () => fetch('/applicants.json').then(res => res.json()),
+    // For static hosting: fetch generated JSON
+    queryFn: () => {
+      const base = process.env.NEXT_PUBLIC_BASE_PATH || '';
+      return fetch(`${base}/data.json`).then(res => res.json());
+    },
   });
 
   const [stats, setStats] = useState({

@@ -57,7 +57,7 @@ interface CorrelationDataPoint {
 export default function AnalyticsPage() {
   const { data: applicants = [], isLoading } = useQuery<Applicant[]>({
     queryKey: ['applicants'],
-    queryFn: () => fetch('/applicants.json').then(res => res.json()),
+    queryFn: () => fetch(`${process.env.NEXT_PUBLIC_BASE_PATH}/data.json`).then(res => res.json()),
   });
 
   const [selectedMetric, setSelectedMetric] = useState('gpa-ielts');
