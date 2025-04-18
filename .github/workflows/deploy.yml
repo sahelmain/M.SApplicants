@@ -22,10 +22,22 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: '20'
+          cache: 'npm'
 
       - name: Install dependencies
         run: npm ci
+        env:
+          NODE_OPTIONS: '--max-http-header-size=16384'
+        # Add retry mechanism for network issues
+        id: npm-ci
+        continue-on-error: true
 
+      - name: Retry Install dependencies
+        if: steps.npm-ci.outcome != 'success'
+        run: npm ci --no-audit
+        env:
+          NODE_OPTIONS: '--max-http-header-size=16384'
+        
       - name: Build
         run: npm run build
 
