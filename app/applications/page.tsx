@@ -20,9 +20,11 @@ type Applicant = {
 };
 
 export default function ApplicationsPage() {
+  const basePath = process.env.NEXT_PUBLIC_BASE_PATH || '';
+  
   const { data: applicants = [], isLoading } = useQuery<Applicant[]>({
     queryKey: ['applicants'],
-    queryFn: () => fetch('/applicants.json').then(res => res.json()),
+    queryFn: () => fetch(`${basePath}/data.json`).then(res => res.json()),
   });
 
   const [filters, setFilters] = useState({
