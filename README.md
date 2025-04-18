@@ -1,4 +1,38 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# MS Applications Dashboard
+
+A modern dashboard for tracking and analyzing MS/PhD program applications, built with Next.js and Tailwind CSS.
+
+## Features
+
+- Track application statistics (GPA, IELTS, GRE scores)
+- View geographical distribution of applicants
+- Real-time analytics and insights
+- Dark/Light mode support
+- Responsive design
+
+## Tech Stack
+
+- Next.js 14
+- Tailwind CSS
+- TypeScript
+- Shadcn/ui Components
+
+## Development
+
+```bash
+# Install dependencies
+npm install
+
+# Run development server
+npm run dev
+
+# Build for production
+npm run build
+```
+
+## Deployment
+
+This application is deployed on GitHub Pages at [https://sahelmain.github.io/M.SApplicants](https://sahelmain.github.io/M.SApplicants)
 
 ## Getting Started
 

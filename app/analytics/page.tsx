@@ -20,6 +20,7 @@ import {
   Line,
   ComposedChart
 } from 'recharts';
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 
 type Applicant = {
   id: string;
@@ -40,16 +41,29 @@ type ScoreDistribution = {
   ielts: number;
 };
 
+// Define a typed map for score ranges to allow indexing by string keys
+type RangeType = { label: string; min: number; max: number; count: number };
+type RangeMap = Record<string, RangeType>;
+
+interface CorrelationDataPoint {
+  gpa: number;
+  ielts: number;
+  country: string;
+  program: string;
+  id: string;
+  [key: string]: string | number; // Add index signature
+}
+
 export default function AnalyticsPage() {
   const { data: applicants = [], isLoading } = useQuery<Applicant[]>({
     queryKey: ['applicants'],
-    queryFn: () => fetch('/api/applicants').then(res => res.json()),
+    queryFn: () => fetch('/applicants.json').then(res => res.json()),
   });
 
   const [selectedMetric, setSelectedMetric] = useState('gpa-ielts');
 
   // Data transformations
-  const correlationData = useMemo(() => {
+  const correlationData: CorrelationDataPoint[] = useMemo(() => {
     return applicants.map(app => ({
       // Only track GPA and IELTS, remove GRE fields entirely
       gpa: app.GPA,
@@ -62,7 +76,10 @@ export default function AnalyticsPage() {
 
   // Dynamically filter data based on selected metrics
   const [xKey, yKey] = selectedMetric.split('-');
-  const dataToPlot = useMemo(() => correlationData.filter(item => item[xKey] != null && item[yKey] != null), [correlationData, selectedMetric]);
+  const dataToPlot = useMemo(() => 
+    correlationData.filter(item => item[xKey] != null && item[yKey] != null), 
+    [correlationData, selectedMetric, xKey, yKey]
+  );
 
   // Compute regression parameters for trend line
   const regressionParams = useMemo(() => {
@@ -117,21 +134,21 @@ export default function AnalyticsPage() {
   // Score distribution
   const scoreDistribution = useMemo(() => {
     // Define ranges for each score type
-    const gpaRanges = {
+    const gpaRanges: RangeMap = {
       'Range 1': { label: '2.0-2.5', min: 2.0, max: 2.5, count: 0 },
       'Range 2': { label: '2.6-3.0', min: 2.6, max: 3.0, count: 0 },
       'Range 3': { label: '3.1-3.5', min: 3.1, max: 3.5, count: 0 },
       'Range 4': { label: '3.6-4.0', min: 3.6, max: 4.0, count: 0 }
     };
     
-    const greRanges = {
+    const greRanges: RangeMap = {
       'Range 1': { label: '280-300', min: 280, max: 300, count: 0 },
       'Range 2': { label: '301-320', min: 301, max: 320, count: 0 },
       'Range 3': { label: '321-340', min: 321, max: 340, count: 0 },
       'Range 4': { label: '341-360', min: 341, max: 360, count: 0 }
     };
     
-    const ieltsRanges = {
+    const ieltsRanges: RangeMap = {
       'Range 1': { label: '5.0-6.0', min: 5.0, max: 6.0, count: 0 },
       'Range 2': { label: '6.1-7.0', min: 6.1, max: 7.0, count: 0 },
       'Range 3': { label: '7.1-8.0', min: 7.1, max: 8.0, count: 0 },
@@ -169,12 +186,17 @@ export default function AnalyticsPage() {
     });
     
     // Convert to chart format using consistent range keys
-    return Object.keys(gpaRanges).map(rangeKey => ({
-      range: gpaRanges[rangeKey].label,
-      gpa: gpaRanges[rangeKey].count,
-      gre: greRanges[rangeKey].count,
-      ielts: ieltsRanges[rangeKey].count
-    }));
+    return Object.keys(gpaRanges).map(rangeKey => {
+      const g = gpaRanges[rangeKey];
+      const gr = greRanges[rangeKey];
+      const i = ieltsRanges[rangeKey];
+      return {
+        range: g.label,
+        gpa: g.count,
+        gre: gr.count,
+        ielts: i.count,
+      };
+    });
   }, [applicants]);
 
   if (isLoading) return <div className="p-8 text-white">Loading analytics...</div>;
@@ -184,6 +206,24 @@ export default function AnalyticsPage() {
       <div className="max-w-7xl mx-auto">
         <h1 className="text-3xl font-bold mb-6 text-white">Advanced Analytics</h1>
         
+        <Card>
+          <CardHeader>
+            <CardTitle>Correlation Analysis</CardTitle>
+          </CardHeader>
+          <CardContent>
+            <Select value={selectedMetric} onValueChange={setSelectedMetric}>
+              <SelectTrigger>
+                <SelectValue placeholder="Select metrics to compare" />
+              </SelectTrigger>
+              <SelectContent>
+                <SelectItem value="gpa-ielts">GPA vs IELTS</SelectItem>
+                <SelectItem value="gpa-program">GPA by Program</SelectItem>
+                <SelectItem value="ielts-country">IELTS by Country</SelectItem>
+              </SelectContent>
+            </Select>
+          </CardContent>
+        </Card>
+        
         {/* Score Correlations */}
         <GlassCard className="mb-8">
           <CardHeader>
@@ -192,7 +232,7 @@ export default function AnalyticsPage() {
           <CardContent>
             <div className="mb-4">
               <p className="text-white">
-                This scatter plot displays each applicant’s GPA on the x-axis and their IELTS score on the y-axis. The orange regression line summarizes the overall correlation: a positive slope indicates that stronger academic performance tends to coincide with higher English proficiency. Because our curriculum is delivered entirely in English, identifying candidates who excel in both dimensions helps ensure they are well-prepared to succeed in the program.
+                This scatter plot displays each applicant's GPA on the x-axis and their IELTS score on the y-axis. The orange regression line summarizes the overall correlation: a positive slope indicates that stronger academic performance tends to coincide with higher English proficiency. Because our curriculum is delivered entirely in English, identifying candidates who excel in both dimensions helps ensure they are well-prepared to succeed in the program.
               </p>
             </div>
             
@@ -253,7 +293,7 @@ export default function AnalyticsPage() {
             </CardHeader>
             <CardContent>
               <p className="text-white mb-4">
-                Bars show each program’s application count (high to low). The orange line shows cumulative %, highlighting which programs attract most interest.
+                Bars show each program's application count (high to low). The orange line shows cumulative %, highlighting which programs attract most interest.
               </p>
               <div className="h-[400px]">
                 <ResponsiveContainer width="100%" height="100%">

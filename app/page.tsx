@@ -38,7 +38,7 @@ const COLORS = ['#0088FE', '#00C49F', '#FFBB28', '#FF8042', '#8884D8', '#82CA9D'
 export default function Home() {
   const { data: applicants, isLoading, error } = useQuery<Applicant[]>({
     queryKey: ['applicants'],
-    queryFn: () => fetch('/api/applicants').then(res => res.json()),
+    queryFn: () => fetch('/applicants.json').then(res => res.json()),
   });
 
   const [stats, setStats] = useState({

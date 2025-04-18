@@ -22,7 +22,7 @@ type Applicant = {
 export default function ApplicationsPage() {
   const { data: applicants = [], isLoading } = useQuery<Applicant[]>({
     queryKey: ['applicants'],
-    queryFn: () => fetch('/api/applicants').then(res => res.json()),
+    queryFn: () => fetch('/applicants.json').then(res => res.json()),
   });
 
   const [filters, setFilters] = useState({

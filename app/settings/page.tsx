@@ -6,9 +6,22 @@ import { GlassCard } from '@/components/ui/glass-card';
 import { Switch } from '@/components/ui/switch';
 import { Input } from '@/components/ui/input';
 
+// Define settings type for dashboard configuration
+type Settings = {
+  darkMode: boolean;
+  showGeoMap: boolean;
+  showTopCountries: boolean;
+  showProgramDistribution: boolean;
+  cardOpacity: number;
+  animationsEnabled: boolean;
+  dataRefreshRate: number;
+  defaultTab: string;
+  allowDataExport: boolean;
+};
+
 export default function SettingsPage() {
   // Dashboard appearance settings
-  const [settings, setSettings] = useState({
+  const [settings, setSettings] = useState<Settings>({
     darkMode: true,
     showGeoMap: true,
     showTopCountries: true,
@@ -21,14 +34,14 @@ export default function SettingsPage() {
   });
 
   // Handle settings changes
-  const handleToggle = (setting: string) => {
+  const handleToggle = (setting: keyof Settings) => {
     setSettings(prev => ({
       ...prev,
       [setting]: !prev[setting],
     }));
   };
 
-  const handleChange = (setting: string, value: any) => {
+  const handleChange = (setting: keyof Settings, value: any) => {
     setSettings(prev => ({
       ...prev,
       [setting]: value,
