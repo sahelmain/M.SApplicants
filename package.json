@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "next dev",
     "preexport": "node scripts/gen-data.cjs",
-    "build": "next build && next export",
+    "build": "next build",
     "start": "next start",
     "lint": "next lint"
   },
