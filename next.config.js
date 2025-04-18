@@ -2,7 +2,7 @@
 // Use dynamic basePath and assetPrefix in production, none in dev for local preview
 const isProd = process.env.NODE_ENV === 'production';
 const basePath = isProd ? '/M.SApplicants' : '';
-const assetPrefix = isProd ? '/M.SApplicants' : '';
+const assetPrefix = isProd ? '/M.SApplicants/' : '';
 
 const nextConfig = {
   // Force static-only output for app directory
