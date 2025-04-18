@@ -21,6 +21,16 @@ const nextConfig = {
   },
   images: {
     unoptimized: true
+  },
+  // Ensure data.json is copied to the output directory
+  webpack: (config, { isServer }) => {
+    if (!isServer) {
+      config.resolve.fallback = {
+        fs: false,
+        path: false,
+      };
+    }
+    return config;
   }
 };
 
