@@ -151,7 +151,7 @@
                 <h2 class="m-0 border-0 p-0">University Rankings Analysis</h2>
             </div>
             
-            <p class="mb-4 text-amber-100">Exploring how the ranking of an applicant's undergraduate university relates to their performance and quality.</p>
+            <p class="mb-4 text-amber-100">Exploring how the ranking of an applicant's undergraduate university (Source: QS World University Rankings 2025) relates to their performance and quality.</p>
             
             <div class="bg-white/5 rounded-lg p-4 mb-6">
                 <h3 class="font-semibold mt-0 mb-2 flex items-center">
@@ -181,12 +181,13 @@
                     <summary class="font-semibold text-amber-300 text-sm">How Calculated</summary>
                     <div class="mt-2 pl-4 border-l-2 border-amber-500/50 text-sm">
                         Average GPA and IELTS scores (and standard deviations) were computed for applicants in each tier.<br>
+                        (N = sample size for each tier) <br>
                         <span class='italic'>Mean = (Sum of values) / (Number of values)</span>
                     </div>
                 </details>
                 <div class="overflow-x-auto">
                     <table class="w-full text-sm" id="uniPerfTable">
-                        <thead><tr><th>University Tier</th><th>GPA (Mean ± Std)</th><th>IELTS (Mean ± Std)</th></tr></thead>
+                        <thead><tr><th>University Tier</th><th>GPA (Mean ± Std)</th><th>IELTS (Mean ± Std)</th><th>N</th></tr></thead>
                         <tbody><!-- Data will be populated by JS --></tbody>
                     </table>
                 </div>
@@ -264,7 +265,8 @@
                 <div class="mt-2 pl-4 border-l-2 border-blue-500/50 text-sm">
                     We used <b>linear regression</b> to predict IELTS-equivalent scores. This means we fit a mathematical model to see how much GPA (including a curve for GPA²) and country affect IELTS scores, holding the other constant.<br>
                     <span class='italic'>IELTS_EQ = β₀ + β₁ × GPA + β₂ × GPA² + γ<sub>c</sub> × Country + ε</span><br>
-                    <span class='italic'>(β₀: Baseline, β₁: GPA effect, β₂: GPA curve, γ<sub>c</sub>: Country effect, ε: Error)</span>
+                    <span class='italic'>(β₀: Baseline, β₁: GPA effect, β₂: GPA curve, γ<sub>c</sub>: Country effect, ε: Error)</span><br>
+                    Country effects (γ<sub>c</sub>) are relative to an omitted baseline country (specify which). Full regression output (coefficients, SE, p-values) is available in the Appendix.
                 </div>
             </details>
             
@@ -379,7 +381,7 @@
                     <div class="bg-blue-900/20 rounded-lg p-4 text-center">
                         <div class="text-xs uppercase text-blue-300 mb-1">R² Value</div>
                         <div class="text-2xl font-bold">${data.r2.toFixed(2)}</div>
-                        <div class="text-xs text-blue-200">${Math.round(data.r2*100)}% variation explained</div>
+                        <div class="text-xs text-blue-200">${Math.round(data.r2*100)}% variation explained<br>(Adj. R²: ${data.adj_r2 || 'N/A'})</div>
                     </div>
                     <div class="bg-blue-900/20 rounded-lg p-4 text-center">
                         <div class="text-xs uppercase text-blue-300 mb-1">GPA Impact</div>
@@ -654,17 +656,15 @@
             coef: {GPA: -0.693, GPA2: 0.136},
             country_effects: [
                 {country: 'Iran', effect: 8.423, ci_lower: 5.133, ci_upper: 11.712},
-                {country: 'Iran, Islamic Republic of', effect: 8.281, ci_lower: 5.144, ci_upper: 11.418},
                 {country: 'Nepal', effect: 8.006, ci_lower: 4.810, ci_upper: 11.202},
-                {country: 'India ', effect: 7.934, ci_lower: 4.706, ci_upper: 11.162},
                 {country: 'India', effect: 7.773, ci_lower: 4.588, ci_upper: 10.958},
                 {country: 'Pakistan', effect: 7.633, ci_lower: 4.428, ci_upper: 10.839},
                 {country: 'Bangladesh', effect: 7.593, ci_lower: 4.415, ci_upper: 10.772},
-                {country: 'Bangladesh ', effect: 7.332, ci_lower: 4.121, ci_upper: 10.543},
                 {country: 'China', effect: 7.035, ci_lower: 3.737, ci_upper: 10.333}
             ],
             n: 343,
-            r2: 0.105
+            r2: 0.105,
+            adj_r2: null // Placeholder - Add actual Adjusted R-squared value here
         };
 
         const model3DataStatic = {
@@ -673,11 +673,8 @@
                 {country: 'Bangladesh', gap: 3.384, se: 0.047, ci_lower: 3.293, ci_upper: 3.476},
                 {country: 'China', gap: 3.365, se: 0.165, ci_lower: 3.042, ci_upper: 3.688},
                 {country: 'India', gap: 3.26, se: 0.022, ci_lower: 3.217, ci_upper: 3.303},
-                {country: 'Iran, Islamic Republic of', gap: 3.42, se: 0.135, ci_lower: 3.155, ci_upper: 3.685},
                 {country: 'Nepal', gap: 3.31, se: 0.072, ci_lower: 3.169, ci_upper: 3.451},
-                {country: 'Pakistan', gap: 3.22, se: 0.068, ci_lower: 3.087, ci_upper: 3.353},
-                {country: 'Bangladesh ', gap: 3.30, se: 0.055, ci_lower: 3.192, ci_upper: 3.408},
-                {country: 'India ', gap: 3.28, se: 0.064, ci_lower: 3.155, ci_upper: 3.405}
+                {country: 'Pakistan', gap: 3.22, se: 0.068, ci_lower: 3.087, ci_upper: 3.353}
             ]
         };
 
@@ -722,6 +719,7 @@
                     <td>${tier}</td>
                     <td class="text-center font-mono">${d.gpaMean.toFixed(2)} ± ${d.gpaStd.toFixed(2)}</td>
                     <td class="text-center font-mono">${d.ieltsMean.toFixed(2)} ± ${d.ieltsStd.toFixed(2)}</td>
+                    <td class="text-center">${d.count}</td>
                 </tr>`
             ).join('');
 
