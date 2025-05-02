@@ -13,19 +13,28 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
     <!-- Chart.js for visualizations -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
     <style>
         body {
-            background: linear-gradient(to bottom, #1e293b, #0f172a);
+            background: linear-gradient(135deg, #1a2151, #0f172a);
             min-height: 100vh;
             color: white;
+            font-family: 'Inter', sans-serif;
         }
         .glass-card {
-            background: rgba(255, 255, 255, 0.1);
+            background: rgba(255, 255, 255, 0.08);
             backdrop-filter: blur(10px);
-            border-radius: 1rem;
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            margin-bottom: 2rem; /* Add spacing between cards */
-            padding: 1.5rem;
+            border-radius: 1.5rem;
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            margin-bottom: 2.5rem;
+            padding: 2rem;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+        }
+        .glass-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
         }
         .error-message {
             color: #ef4444;
@@ -38,241 +47,299 @@
         table {
             width: 100%;
             margin-top: 1rem;
-            border-collapse: collapse;
+            border-collapse: separate;
+            border-spacing: 0;
+            border-radius: 0.5rem;
+            overflow: hidden;
         }
         th, td {
-            padding: 0.5rem 1rem;
+            padding: 0.75rem 1rem;
             text-align: left;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
         }
         th {
             background-color: rgba(255, 255, 255, 0.1);
+            font-weight: 600;
+        }
+        tr:hover td {
+            background-color: rgba(255, 255, 255, 0.05);
         }
         h2 {
-            font-size: 1.5rem;
-            font-weight: 600;
-            margin-bottom: 1rem;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.3);
-            padding-bottom: 0.5rem;
+            font-size: 1.75rem;
+            font-weight: 700;
+            margin-bottom: 1.25rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+            padding-bottom: 0.75rem;
+            color: rgba(255, 255, 255, 0.95);
+        }
+        h3 {
+            color: rgba(255, 255, 255, 0.9);
         }
         .loading-placeholder {
             text-align: center;
-            padding: 2rem;
+            padding: 3rem;
             color: #94a3b8;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 0.5rem;
+            animation: pulse 2s infinite;
+        }
+        @keyframes pulse {
+            0% { opacity: 0.6; }
+            50% { opacity: 1; }
+            100% { opacity: 0.6; }
+        }
+        .data-pill {
+            display: inline-block;
+            background: rgba(96, 165, 250, 0.2);
+            border: 1px solid rgba(96, 165, 250, 0.4);
+            border-radius: 2rem;
+            padding: 0.25rem 0.75rem;
+            font-size: 0.875rem;
+            margin-right: 0.5rem;
+            margin-bottom: 0.5rem;
+        }
+        details summary {
+            cursor: pointer;
+            padding: 0.5rem;
+            border-radius: 0.25rem;
+            transition: background-color 0.2s;
+        }
+        details summary:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+        .blur-background {
+            position: relative;
+        }
+        .blur-background::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at 30% 30%, rgba(56, 189, 248, 0.12), transparent 70%);
+            z-index: -1;
+            filter: blur(60px);
         }
     </style>
 </head>
-<body class="p-8">
-    <div class="max-w-7xl mx-auto">
-        <h1 class="text-3xl font-bold mb-8 text-center">PhD Application Analysis</h1>
+<body class="p-4 lg:p-8">
+    <div class="max-w-7xl mx-auto blur-background">
+        <header class="mb-10">
+            <div class="flex flex-col sm:flex-row justify-between items-center">
+                <h1 class="text-4xl font-bold mb-4 sm:mb-0 text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-400">PhD Application Analysis</h1>
+                <nav class="flex space-x-4">
+                    <a href="#university" class="px-4 py-2 rounded bg-white/10 hover:bg-white/20 transition">University Ranking</a>
+                    <a href="#ielts-gpa" class="px-4 py-2 rounded bg-white/10 hover:bg-white/20 transition">IELTS by GPA</a>
+                    <a href="#country-gpa" class="px-4 py-2 rounded bg-white/10 hover:bg-white/20 transition">Country GPA</a>
+                    <a href="#applicant-quality" class="px-4 py-2 rounded bg-white/10 hover:bg-white/20 transition">Applicant Quality</a>
+                </nav>
+            </div>
+            <p class="mt-4 text-lg text-blue-200 opacity-80">Explore predictive models and statistics for PhD applicants with visual and interactive data analysis.</p>
+        </header>
         
         <div id="globalErrorContainer" class="hidden"></div>
 
-        <!-- Model 2: Score Production -->
-        <div class="glass-card">
-            <h2>Model 2: Score Production Function (IELTS ~ GPA + Country)</h2>
-            <p class="text-sm text-blue-200 mb-2">How calculated: We used <b>linear regression</b> to predict IELTS-equivalent scores from GPA and country. This means we fit a line (with a curve for GPA²) to see how much GPA and country affect IELTS scores, holding the other constant.<br>
-            <span class='italic'>IELTS_EQ = β₀ + β₁ × GPA + β₂ × GPA² + γ<sub>c</sub> × Country + ε</span><br>
-            <span class='italic'>β₁: effect of GPA, β₂: effect of GPA squared (diminishing returns), γ<sub>c</sub>: effect for each country, ε: error</span></p>
-            <div id="model2Result">
-                <div class="loading-placeholder">Loading Model 2 data...</div>
+        <!-- University Rankings Analysis (Previously 4th, now 1st) -->
+        <div id="university" class="glass-card">
+            <div class="flex items-center mb-4">
+                <div class="w-10 h-10 rounded-full bg-gradient-to-br from-amber-500 to-red-600 flex items-center justify-center mr-3">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+                    </svg>
+                </div>
+                <h2 class="m-0 border-0 p-0">University Rankings Analysis</h2>
+            </div>
+            
+            <p class="mb-4 text-amber-100">Exploring how the ranking of an applicant's undergraduate university relates to their performance and quality.</p>
+            
+            <div class="bg-white/5 rounded-lg p-4 mb-6">
+                <h3 class="font-semibold mt-0 mb-2 flex items-center">
+                    <span class="inline-block w-2 h-2 bg-amber-400 rounded-full mr-2"></span>
+                    University Tier Distribution (<strong id="uniMatchedCount" class="text-amber-300">...</strong> matched applicants)
+                </h3>
+                <details class="mb-2 rounded bg-amber-900/10 p-2">
+                    <summary class="font-semibold text-amber-300 text-sm">How Calculated</summary>
+                    <div class="mt-2 pl-4 border-l-2 border-amber-500/50 text-sm">
+                        Applicants' universities were matched to global rankings and grouped into tiers (Tier 2: 301-600, Tier 3: 601-1200, Tier 4: 1201+).
+                    </div>
+                </details>
+                <div class="overflow-x-auto">
+                    <table class="w-full text-sm" id="uniTierDistTable">
+                        <thead><tr><th>University Tier</th><th>Count</th><th>Percentage</th></tr></thead>
+                        <tbody><!-- Data will be populated by JS --></tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="bg-white/5 rounded-lg p-4 mb-6">
+                <h3 class="font-semibold mt-0 mb-2 flex items-center">
+                    <span class="inline-block w-2 h-2 bg-amber-400 rounded-full mr-2"></span>
+                    Performance by University Tier
+                </h3>
+                <details class="mb-2 rounded bg-amber-900/10 p-2">
+                    <summary class="font-semibold text-amber-300 text-sm">How Calculated</summary>
+                    <div class="mt-2 pl-4 border-l-2 border-amber-500/50 text-sm">
+                        Average GPA and IELTS scores (and standard deviations) were computed for applicants in each tier.<br>
+                        <span class='italic'>Mean = (Sum of values) / (Number of values)</span>
+                    </div>
+                </details>
+                <div class="overflow-x-auto">
+                    <table class="w-full text-sm" id="uniPerfTable">
+                        <thead><tr><th>University Tier</th><th>GPA (Mean ± Std)</th><th>IELTS (Mean ± Std)</th></tr></thead>
+                        <tbody><!-- Data will be populated by JS --></tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="bg-white/5 rounded-lg p-4 mb-6">
+                <h3 class="font-semibold mt-0 mb-2 flex items-center">
+                    <span class="inline-block w-2 h-2 bg-amber-400 rounded-full mr-2"></span>
+                    Quality Score by University Tier
+                </h3>
+                <details class="mb-2 rounded bg-amber-900/10 p-2">
+                    <summary class="font-semibold text-amber-300 text-sm">How Calculated</summary>
+                    <div class="mt-2 pl-4 border-l-2 border-amber-500/50 text-sm">
+                        The average combined quality score (from PCA of GPA & IELTS) was calculated for each tier.
+                    </div>
+                </details>
+                <div class="overflow-x-auto">
+                    <table class="w-full text-sm" id="uniQualityTable">
+                        <thead><tr><th>University Tier</th><th>Quality Mean (± Std)</th><th>Count</th></tr></thead>
+                        <tbody><!-- Data will be populated by JS --></tbody>
+                    </table>
+                </div>
+            </div>
+            
+            <!-- Add chart canvas for university ranking visualization -->
+            <div class="mt-6 mb-6 bg-white/5 rounded-lg p-4" style="height: 350px;">
+                <canvas id="universityQualityChart"></canvas>
+            </div>
+
+            <div class="bg-white/5 rounded-lg p-4 mb-6">
+                <h3 class="font-semibold mt-0 mb-2 flex items-center">
+                    <span class="inline-block w-2 h-2 bg-amber-400 rounded-full mr-2"></span>
+                    Bottom 10% Students by University Tier
+                </h3>
+                <details class="mb-2 rounded bg-amber-900/10 p-2">
+                    <summary class="font-semibold text-amber-300 text-sm">How Calculated</summary>
+                    <div class="mt-2 pl-4 border-l-2 border-amber-500/50 text-sm">
+                        We counted how many applicants from each tier fall into the bottom 10% based on their combined quality score.
+                    </div>
+                </details>
+                <div class="overflow-x-auto">
+                    <table class="w-full text-sm" id="uniBottom10Table">
+                        <thead><tr><th>University Tier</th><th>Count of Bottom 10%</th><th>Total Count</th><th>Percentage in Bottom 10%</th></tr></thead>
+                        <tbody><!-- Data will be populated by JS --></tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="bg-gradient-to-r from-amber-900/30 to-red-900/30 rounded-lg p-4">
+                <h3 class="font-semibold mt-0 mb-2 flex items-center">
+                    <span class="inline-block w-2 h-2 bg-amber-400 rounded-full mr-2"></span>
+                    Key Findings Summary
+                </h3>
+                <ul class="list-none pl-5 space-y-2 text-sm" id="uniKeyFindings">
+                    <!-- Key findings will be populated by JS -->
+                </ul>
             </div>
         </div>
 
-        <!-- Model 3: Country GPA Gaps -->
-        <div class="glass-card">
-            <h2>Model 3: Country Average GPA</h2>
-            <p class="text-sm text-blue-200 mb-2">How calculated: For each country, we simply averaged the GPAs of all applicants from that country.<br>
-            <span class='italic'>Mean GPA = (sum of all GPAs from country) / (number of applicants from country)</span></p>
-            <div id="model3Result">
-                <div class="loading-placeholder">Loading Model 3 data...</div>
+        <!-- IELTS-GPA Relationship (formerly Model 2) -->
+        <div id="ielts-gpa" class="glass-card">
+            <div class="flex items-center mb-4">
+                <div class="w-10 h-10 rounded-full bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center mr-3">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+                    </svg>
+                </div>
+                <h2 class="m-0 border-0 p-0">IELTS-GPA Relationship by Country</h2>
+            </div>
+            
+            <p class="mb-3 text-blue-100">This model examines how an applicant's IELTS score relates to their GPA and country of citizenship.</p>
+            
+            <details class="mb-4 rounded bg-blue-900/20 p-2">
+                <summary class="font-semibold text-blue-300">How Calculated (Technical Details)</summary>
+                <div class="mt-2 pl-4 border-l-2 border-blue-500/50 text-sm">
+                    We used <b>linear regression</b> to predict IELTS-equivalent scores. This means we fit a mathematical model to see how much GPA (including a curve for GPA²) and country affect IELTS scores, holding the other constant.<br>
+                    <span class='italic'>IELTS_EQ = β₀ + β₁ × GPA + β₂ × GPA² + γ<sub>c</sub> × Country + ε</span><br>
+                    <span class='italic'>(β₀: Baseline, β₁: GPA effect, β₂: GPA curve, γ<sub>c</sub>: Country effect, ε: Error)</span>
+                </div>
+            </details>
+            
+            <div id="model2Result">
+                <div class="loading-placeholder">Loading IELTS-GPA relationship data...</div>
+            </div>
+        </div>
+
+        <!-- Country GPA Analysis (formerly Model 3) -->
+        <div id="country-gpa" class="glass-card">
+            <div class="flex items-center mb-4">
+                <div class="w-10 h-10 rounded-full bg-gradient-to-br from-green-500 to-teal-600 flex items-center justify-center mr-3">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 21v-4m0 0V5a2 2 0 012-2h6.5l1 1H21l-3 6 3 6h-8.5l-1-1H5a2 2 0 00-2 2zm9-13.5V9" />
+                    </svg>
+                </div>
+                <h2 class="m-0 border-0 p-0">Country GPA Comparison</h2>
+            </div>
+            
+            <p class="mb-3 text-green-100">This chart shows the average GPA for applicants from different countries, highlighting potential differences in grading systems or applicant pools.</p>
+            
+            <details class="mb-4 rounded bg-green-900/20 p-2">
+                <summary class="font-semibold text-green-300">How Calculated (Technical Details)</summary>
+                <div class="mt-2 pl-4 border-l-2 border-green-500/50 text-sm">
+                    For each country, we simply averaged the GPAs of all applicants.<br>
+                    <span class='italic'>Mean GPA = (Sum of GPAs from country) / (Number of applicants from country)</span>
+                </div>
+            </details>
+            
+            <div id="model3Result" class="mt-6">
+                <div class="loading-placeholder">Loading country GPA comparison data...</div>
                 <canvas id="model3Chart"></canvas>
             </div>
         </div>
 
-        <!-- Model 7: Applicant Quality -->
-        <div class="glass-card">
-            <h2>Model 7: Latent Applicant Quality (Bottom 10%)</h2>
-            <p class="text-sm text-blue-200 mb-2">How calculated: We used <b>Principal Component Analysis (PCA)</b> to combine standardized GPA and IELTS into a single "quality" score for each applicant.<br>
-            <span class='italic'>Quality = w₁ × zGPA + w₂ × zIELTS (weights from PCA)</span><br>
-            <b>What is PCA?</b> PCA is a math technique that finds the best way to combine several numbers (here, GPA and IELTS) into one score that summarizes overall performance. The "bottom 10%" are those with the lowest combined scores.<br>
-            <span class='italic'>Threshold = 10th percentile of all quality scores</span></p>
-            <div id="model7Result">
-                 <div class="loading-placeholder">Loading Model 7 data...</div>
+        <!-- Applicant Quality Analysis (formerly Model 7) -->
+        <div id="applicant-quality" class="glass-card">
+            <div class="flex items-center mb-4">
+                <div class="w-10 h-10 rounded-full bg-gradient-to-br from-purple-500 to-pink-600 flex items-center justify-center mr-3">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+                    </svg>
+                </div>
+                <h2 class="m-0 border-0 p-0">Applicant Quality Distribution</h2>
             </div>
-        </div>
-
-        <!-- University Rankings Analysis -->
-        <div class="glass-card">
-            <h2>University Rankings Analysis</h2>
-            <div id="universityRankingsResult">
-                <p class="mb-4">This analysis explores how the global ranking of an applicant's undergraduate institution affects their performance metrics and overall application quality.</p>
-                
-                <h3 class="font-semibold mt-4 mb-2">University Tier Distribution (190 matched applicants)</h3>
-                <p class="text-sm text-blue-200 mb-2">How calculated: Each applicant's undergraduate institution was matched to a global ranking and grouped into tiers. This table shows the number and percentage of applicants in each tier.</p>
-                <div class="overflow-x-auto">
-                    <table class="w-full">
-                        <thead>
-                            <tr>
-                                <th>University Tier</th>
-                                <th>Count</th>
-                                <th>Percentage</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>Tier 2 (301-600)</td>
-                                <td>12</td>
-                                <td>6.3%</td>
-                            </tr>
-                            <tr>
-                                <td>Tier 3 (601-1200)</td>
-                                <td>52</td>
-                                <td>27.4%</td>
-                            </tr>
-                            <tr>
-                                <td>Tier 4 (1201+)</td>
-                                <td>126</td>
-                                <td>66.3%</td>
-                            </tr>
-                        </tbody>
-                    </table>
+            
+            <p class="mb-3 text-purple-100">This identifies the bottom 10% of applicants based on a combined "quality" score derived from their standardized GPA and IELTS scores.</p>
+            
+            <details class="mb-4 rounded bg-purple-900/20 p-2">
+                <summary class="font-semibold text-purple-300">How Calculated (Technical Details)</summary>
+                <div class="mt-2 pl-4 border-l-2 border-purple-500/50 text-sm">
+                    We used <b>Principal Component Analysis (PCA)</b> to create the single quality score. PCA is a technique to combine related numbers into one summary score.<br>
+                    <span class='italic'>Quality Score = w₁ × zGPA + w₂ × zIELTS (weights from PCA)</span><br>
+                    The "bottom 10%" are those with the lowest combined scores (below the 10th percentile threshold).<br>
+                    <span class='italic'>Threshold = 10th percentile of all Quality Scores</span>
                 </div>
-
-                <h3 class="font-semibold mt-6 mb-2">Performance by University Tier</h3>
-                <p class="text-sm text-blue-200 mb-2">How calculated: For each tier, we computed the mean and standard deviation of GPA and IELTS scores.<br>
-                <span class='italic'>Mean = (sum of all values) / (number of values)</span></p>
-                <div class="overflow-x-auto">
-                    <table class="w-full">
-                        <thead>
-                            <tr>
-                                <th>University Tier</th>
-                                <th>GPA (Mean)</th>
-                                <th>GPA (Std)</th>
-                                <th>IELTS (Mean)</th>
-                                <th>IELTS (Std)</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>Tier 2</td>
-                                <td>3.22</td>
-                                <td>0.50</td>
-                                <td>7.21</td>
-                                <td>0.75</td>
-                            </tr>
-                            <tr>
-                                <td>Tier 3</td>
-                                <td>3.33</td>
-                                <td>0.33</td>
-                                <td>7.07</td>
-                                <td>0.56</td>
-                            </tr>
-                            <tr>
-                                <td>Tier 4</td>
-                                <td>3.23</td>
-                                <td>0.28</td>
-                                <td>7.02</td>
-                                <td>0.59</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-
-                <h3 class="font-semibold mt-6 mb-2">Quality Score by University Tier</h3>
-                <p class="text-sm text-blue-200 mb-2">How calculated: We used <b>Principal Component Analysis (PCA)</b> to combine standardized GPA and IELTS into a single "quality" score for each applicant.<br>
-                <span class='italic'>Quality = w₁ × zGPA + w₂ × zIELTS (weights from PCA)</span></p>
-                <div class="overflow-x-auto">
-                    <table class="w-full">
-                        <thead>
-                            <tr>
-                                <th>University Tier</th>
-                                <th>Quality Mean</th>
-                                <th>Quality Std</th>
-                                <th>Count</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>Tier 2</td>
-                                <td>0.165</td>
-                                <td>0.786</td>
-                                <td>12</td>
-                            </tr>
-                            <tr>
-                                <td>Tier 3</td>
-                                <td>0.139</td>
-                                <td>1.097</td>
-                                <td>52</td>
-                            </tr>
-                            <tr>
-                                <td>Tier 4</td>
-                                <td>-0.073</td>
-                                <td>1.022</td>
-                                <td>126</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-                
-                <!-- Add chart canvas for university ranking visualization -->
-                <div class="mt-6" style="height: 300px;">
-                    <canvas id="universityQualityChart"></canvas>
-                </div>
-
-                <h3 class="font-semibold mt-6 mb-2">Bottom 10% Students by University Tier</h3>
-                <p class="text-sm text-blue-200 mb-2">How calculated: The bottom 10% are applicants with the lowest quality scores (from PCA).<br>
-                <span class='italic'>Threshold = 10th percentile of all quality scores</span></p>
-                <div class="overflow-x-auto">
-                    <table class="w-full">
-                        <thead>
-                            <tr>
-                                <th>University Tier</th>
-                                <th>Count of Bottom 10%</th>
-                                <th>Total Count</th>
-                                <th>Percentage in Bottom 10%</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>Tier 2</td>
-                                <td>0</td>
-                                <td>12</td>
-                                <td>0%</td>
-                            </tr>
-                            <tr>
-                                <td>Tier 3</td>
-                                <td>4</td>
-                                <td>52</td>
-                                <td>7.7%</td>
-                            </tr>
-                            <tr>
-                                <td>Tier 4</td>
-                                <td>15</td>
-                                <td>126</td>
-                                <td>11.9%</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-
-                <h3 class="font-semibold mt-6 mb-2">Key Findings</h3>
-                <ul class="list-disc pl-5 space-y-2">
-                    <li>University tier has a small but not statistically significant effect on both GPA and IELTS scores.</li>
-                    <li>Higher-ranked universities (Tier 2) have greater average applicant quality based on our combined PCA metric.</li>
-                    <li>No applicants from Tier 2 universities fall in the bottom 10% of quality.</li>
-                    <li>11.9% of Tier 4 applicants fall in the bottom 10%, compared to 7.7% for Tier 3.</li>
-                </ul>
+            </details>
+            
+            <div id="model7Result">
+                <div class="loading-placeholder">Loading applicant quality distribution data...</div>
             </div>
         </div>
 
     </div>
 
+    <footer class="text-center text-gray-400 text-sm py-8">
+        <p>© 2025 PhD Application Analysis - All rights reserved</p>
+    </footer>
+
     <script>
         function showError(containerId, message) {
             const errorContainer = document.getElementById(containerId);
             if (errorContainer) {
-            errorContainer.innerHTML = `<div class="error-message">${message}</div>`;
+                errorContainer.innerHTML = `<div class="error-message">${message}</div>`;
+                errorContainer.classList.remove('hidden');
             } else {
                 console.error("Error container not found:", containerId);
             }
@@ -302,43 +369,81 @@
             const gpa2Coef = data.coef.GPA2.toFixed(2);
             const countryEffects = data.country_effects || [];
             
-            console.log("Model 2 data received:", data); // Debug log
-            
-            let tableHtml = `
-                <p class="mb-2 text-blue-200 text-sm">Sample Size (N): <b>${data.n}</b> is the number of applicants included in this model. R²: <b>${data.r2.toFixed(2)}</b> means the model explains ${Math.round(data.r2*100)}% of the variation in IELTS scores.</p>
-                <p class="mb-2 text-blue-200 text-sm">The tables below show the top and bottom 5 country effects. The "Effect" value tells you how much higher or lower, on average, applicants from that country score on IELTS (after accounting for GPA), compared to the reference group. Higher values mean higher predicted IELTS scores for that country.</p>
-                <p class="mb-4">+1 GPA point ≈ <strong>${gpaCoef}</strong> IELTS-equivalent band (Note: GPA² coefficient is ${gpa2Coef}, indicating diminishing returns).</p>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">`;
+            let headerHtml = `
+                <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-6">
+                    <div class="bg-blue-900/20 rounded-lg p-4 text-center">
+                        <div class="text-xs uppercase text-blue-300 mb-1">Sample Size</div>
+                        <div class="text-2xl font-bold">${data.n}</div>
+                        <div class="text-xs text-blue-200">applicants</div>
+                    </div>
+                    <div class="bg-blue-900/20 rounded-lg p-4 text-center">
+                        <div class="text-xs uppercase text-blue-300 mb-1">R² Value</div>
+                        <div class="text-2xl font-bold">${data.r2.toFixed(2)}</div>
+                        <div class="text-xs text-blue-200">${Math.round(data.r2*100)}% variation explained</div>
+                    </div>
+                    <div class="bg-blue-900/20 rounded-lg p-4 text-center">
+                        <div class="text-xs uppercase text-blue-300 mb-1">GPA Impact</div>
+                        <div class="text-2xl font-bold">${gpaCoef}</div>
+                        <div class="text-xs text-blue-200">IELTS points per GPA point</div>
+                    </div>
+                </div>
+                <p class="mb-4 text-blue-100 text-sm"><em>The "Effect" value shows the average IELTS score difference for that country vs. baseline, after accounting for GPA. Higher is better.</em></p>
+            `;
 
+            let tableHtml = `<div class="grid grid-cols-1 md:grid-cols-2 gap-6">`;
             if (countryEffects.length > 0) {
                 const topEffects = countryEffects.slice(0, 5);
                 const bottomEffects = countryEffects.slice(-5).reverse();
                 
-                tableHtml += `<div>
-                    <h3 class="font-semibold mb-2">Top 5 Country Effects (vs Intercept/Reference)</h3>
-                    <table class="w-full"><thead><tr><th>Country</th><th>Effect</th></tr></thead><tbody>`;
-                topEffects.forEach(item => {
-                    tableHtml += `<tr><td>${item.country}</td><td>${item.effect.toFixed(2)}</td></tr>`;
+                tableHtml += `<div class="bg-blue-900/20 p-4 rounded-lg">
+                    <h4 class="font-semibold mb-3 text-blue-300 flex items-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18" />
+                        </svg>
+                        Top 5 Country Effects
+                    </h4>
+                    <table class="w-full text-sm"><thead><tr><th>Country</th><th class="text-right">Effect</th></tr></thead><tbody>`;
+                
+                topEffects.forEach(item => { 
+                    tableHtml += `<tr>
+                        <td>${item.country}</td>
+                        <td class="text-right font-mono text-blue-300">+${item.effect.toFixed(2)}</td>
+                    </tr>`; 
                 });
-                tableHtml += `</tbody></table></div><div>
-                    <h3 class="font-semibold mb-2">Bottom 5 Country Effects (vs Intercept/Reference)</h3>
-                    <table class="w-full"><thead><tr><th>Country</th><th>Effect</th></tr></thead><tbody>`;
-                bottomEffects.forEach(item => {
-                    tableHtml += `<tr><td>${item.country}</td><td>${item.effect.toFixed(2)}</td></tr>`;
+                
+                tableHtml += `</tbody></table></div>
+                <div class="bg-blue-900/20 p-4 rounded-lg">
+                    <h4 class="font-semibold mb-3 text-blue-300 flex items-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+                        </svg>
+                        Bottom 5 Country Effects
+                    </h4>
+                    <table class="w-full text-sm"><thead><tr><th>Country</th><th class="text-right">Effect</th></tr></thead><tbody>`;
+                
+                bottomEffects.forEach(item => { 
+                    tableHtml += `<tr>
+                        <td>${item.country}</td>
+                        <td class="text-right font-mono text-blue-300">+${item.effect.toFixed(2)}</td>
+                    </tr>`; 
                 });
-                tableHtml += `</tbody></table>`;
+                
+                tableHtml += `</tbody></table></div>`;
             } else {
-                console.warn("No country effects data available for Model 2");
-                tableHtml += `<p class="text-yellow-500">No country effects data available.</p>`;
+                tableHtml += `<div class="col-span-2 text-yellow-500 text-sm p-4 bg-yellow-900/20 rounded-lg flex items-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+                    </svg>
+                    No country effects data available.
+                </div>`;
             }
-            
-            tableHtml += `</div></div>`;
-            container.innerHTML = tableHtml;
+            tableHtml += `</div>`;
+            container.innerHTML = headerHtml + tableHtml;
         }
         
         let model3ChartInstance = null; // Store chart instance
         function renderModel3(data) {
-            console.log("Model 3 data received:", data); // Debug log
+            console.log("Country GPA data received:", data); // Debug log
             
             const container = document.getElementById('model3Result');
             // Ensure we have a canvas element
@@ -356,8 +461,14 @@
             const ctx = canvas.getContext('2d');
             
             if (!data.bars || !Array.isArray(data.bars) || data.bars.length === 0) {
-                console.warn("No bars data available for Model 3");
-                container.innerHTML = '<p class="text-yellow-500">No country GPA data available.</p>';
+                console.warn("No bars data available for Country GPA analysis");
+                container.innerHTML = `
+                    <div class="flex items-center justify-center p-4 bg-yellow-900/20 rounded-lg text-yellow-500">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+                        </svg>
+                        No country GPA data available.
+                    </div>`;
                 return;
             }
 
@@ -377,10 +488,10 @@
                 data: {
                     labels: labels,
                     datasets: [{
-                        label: 'Average GPA Level by Country',
+                        label: 'Average GPA',
                         data: values,
-                        backgroundColor: 'rgba(54, 162, 235, 0.6)',
-                        borderColor: 'rgba(54, 162, 235, 1)',
+                        backgroundColor: values.map((_, i) => `hsla(${180 - i*15}, 75%, 60%, 0.7)`),
+                        borderColor: values.map((_, i) => `hsla(${180 - i*15}, 75%, 60%, 1)`),
                         borderWidth: 1
                     }]
                 },
@@ -414,6 +525,13 @@
                     plugins: {
                         legend: {
                             display: false
+                        },
+                        tooltip: {
+                            callbacks: {
+                                label: function(context) {
+                                    return `GPA: ${context.parsed.x.toFixed(2)}`;
+                                }
+                            }
                         }
                     }
                 }
@@ -422,67 +540,75 @@
 
         function renderModel7(data) {
             const container = document.getElementById('model7Result');
-            if (!data.low_quality_by_country || !Array.isArray(data.low_quality_by_country) || data.low_quality_by_country.length === 0) {
-                console.warn("No bottom 10% data available for Model 7");
-                container.innerHTML = '<p class="text-yellow-500">No bottom 10% data available.</p>';
+            if (!data.low_quality_by_country || data.low_quality_by_country.length === 0) {
+                container.innerHTML = `
+                    <div class="flex items-center justify-center p-4 bg-yellow-900/20 rounded-lg text-yellow-500">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+                        </svg>
+                        No applicant quality data available.
+                    </div>`;
                 return;
             }
             
-            console.log("Model 7 data received:", data); // Debug log
-            
-            const q10 = data.q10?.toFixed(2) || 'N/A';
-            let tableHtml = `
-                <p class="mb-4">Bottom 10% Quality Threshold (PCA Index): <strong>${q10}</strong></p>
-                <h3 class="font-semibold mb-2">Count of Applicants in Bottom 10% by Country</h3>
-                <table class="w-full">
-                    <thead>
-                        <tr>
-                            <th>Country</th>
-                            <th>Count</th>
-                        </tr>
-                    </thead>
-                    <tbody>`;
-            
-            // Sort by count descending
+            // Sort data by count
             data.low_quality_by_country.sort((a, b) => b.count - a.count);
+            const q10 = data.q10?.toFixed(2) || 'N/A';
             
-            data.low_quality_by_country.forEach(item => {
-                tableHtml += `<tr><td>${item.country}</td><td>${item.count}</td></tr>`;
+            let headerHtml = `
+                <div class="mb-6 p-4 bg-purple-900/20 rounded-lg text-center">
+                    <div class="text-xs uppercase text-purple-300 mb-1">Bottom 10% Quality Threshold</div>
+                    <div class="text-2xl font-bold">${q10}</div>
+                    <div class="text-xs text-purple-200">PCA Index Value</div>
+                </div>
+            `;
+            
+            // Create chart data
+            const chartLabels = data.low_quality_by_country.map(item => item.country);
+            const chartData = data.low_quality_by_country.map(item => item.count);
+            
+            let chartHtml = `
+                <div class="mb-6 rounded-lg overflow-hidden" style="height: 300px;">
+                    <canvas id="model7Chart"></canvas>
+                </div>
+            `;
+            
+            let tableHtml = `
+                <div class="bg-purple-900/20 p-4 rounded-lg">
+                    <h4 class="font-semibold mb-3 text-purple-300 flex items-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 17h8m0 0V9m0 8l-8-8-4 4-6-6" />
+                        </svg>
+                        Count of Applicants in Bottom 10% by Country
+                    </h4>
+                    <table class="w-full text-sm">
+                        <thead><tr><th>Country</th><th class="text-right">Count</th></tr></thead>
+                        <tbody>
+            `;
+            
+            data.low_quality_by_country.forEach(item => { 
+                tableHtml += `
+                    <tr>
+                        <td>${item.country}</td>
+                        <td class="text-right font-mono text-purple-300">${item.count}</td>
+                    </tr>
+                `; 
             });
             
-            tableHtml += `</tbody></table>`;
-            container.innerHTML = tableHtml;
-        }
-
-        // Create university quality chart
-        function createUniversityQualityChart() {
-            const ctx = document.getElementById('universityQualityChart').getContext('2d');
+            tableHtml += `</tbody></table></div>`;
+            container.innerHTML = headerHtml + chartHtml + tableHtml;
             
-            const tierLabels = ['Tier 2 (301-600)', 'Tier 3 (601-1200)', 'Tier 4 (1201+)'];
-            const qualityScores = [0.165, 0.139, -0.073];
-            const countData = [12, 52, 126];
-            
-            // Calculate bubble sizes based on counts
-            const scaleFactor = 10;
-            const bubbleSizes = countData.map(count => count * scaleFactor);
-            
+            // Create chart
+            const ctx = document.getElementById('model7Chart').getContext('2d');
             new Chart(ctx, {
                 type: 'bar',
                 data: {
-                    labels: tierLabels,
+                    labels: chartLabels,
                     datasets: [{
-                        label: 'Quality Score by University Tier',
-                        data: qualityScores,
-                        backgroundColor: [
-                            'rgba(75, 192, 192, 0.7)',
-                            'rgba(54, 162, 235, 0.7)',
-                            'rgba(255, 99, 132, 0.7)'
-                        ],
-                        borderColor: [
-                            'rgba(75, 192, 192, 1)',
-                            'rgba(54, 162, 235, 1)',
-                            'rgba(255, 99, 132, 1)'
-                        ],
+                        label: 'Bottom 10% Count',
+                        data: chartData,
+                        backgroundColor: chartData.map((_, i) => `hsla(${290 - i*10}, 70%, 60%, 0.7)`),
+                        borderColor: chartData.map((_, i) => `hsla(${290 - i*10}, 70%, 60%, 1)`),
                         borderWidth: 1
                     }]
                 },
@@ -491,13 +617,15 @@
                     maintainAspectRatio: false,
                     scales: {
                         y: {
+                            beginAtZero: true,
                             title: {
                                 display: true,
-                                text: 'Mean Quality Score (PCA)',
+                                text: 'Number of Applicants',
                                 color: '#FFFFFF'
                             },
                             ticks: {
-                                color: '#FFFFFF'
+                                color: '#FFFFFF',
+                                precision: 0
                             },
                             grid: {
                                 color: 'rgba(255, 255, 255, 0.1)'
@@ -514,16 +642,147 @@
                     },
                     plugins: {
                         legend: {
-                            labels: {
-                                color: '#FFFFFF'
-                            }
-                        },
-                        tooltip: {
-                            callbacks: {
-                                afterLabel: function(context) {
-                                    const tierIndex = context.dataIndex;
-                                    return `Sample size: ${countData[tierIndex]} applicants`;
+                            display: false
+                        }
+                    }
+                }
+            });
+        }
+
+        // --- University Rankings Rendering (Static Data) ---
+        const uniDataStatic = {
+             matchedCount: 190,
+             tiers: {
+                 "Tier 2 (301-600)": { count: 12, pct: 6.3, gpaMean: 3.22, gpaStd: 0.50, ieltsMean: 7.21, ieltsStd: 0.75, qualityMean: 0.165, qualityStd: 0.786, bottom10Count: 0 },
+                 "Tier 3 (601-1200)": { count: 52, pct: 27.4, gpaMean: 3.33, gpaStd: 0.33, ieltsMean: 7.07, ieltsStd: 0.56, qualityMean: 0.139, qualityStd: 1.097, bottom10Count: 4 },
+                 "Tier 4 (1201+)":    { count: 126, pct: 66.3, gpaMean: 3.23, gpaStd: 0.28, ieltsMean: 7.02, ieltsStd: 0.59, qualityMean: -0.073, qualityStd: 1.022, bottom10Count: 15 }
+             },
+             keyFindings: [
+                 "University tier has a small, statistically insignificant effect on GPA and IELTS.",
+                 "Higher-ranked universities (Tier 2) show higher average applicant quality (PCA score).",
+                 "No applicants from Tier 2 universities fall into the bottom 10% of quality.",
+                 "Lower-ranked universities (Tier 4) have the highest proportion (11.9%) of bottom 10% applicants."
+             ]
+        };
+
+        function renderUniversityRankings(data) {
+            document.getElementById('uniMatchedCount').textContent = data.matchedCount;
+            
+            const tierDistBody = document.getElementById('uniTierDistTable').querySelector('tbody');
+            tierDistBody.innerHTML = Object.entries(data.tiers).map(([tier, d]) => 
+                `<tr><td>${tier}</td><td class="text-center">${d.count}</td><td class="text-right">${d.pct.toFixed(1)}%</td></tr>`
+            ).join('');
+
+            const perfBody = document.getElementById('uniPerfTable').querySelector('tbody');
+            perfBody.innerHTML = Object.entries(data.tiers).map(([tier, d]) => 
+                `<tr>
+                    <td>${tier}</td>
+                    <td class="text-center font-mono">${d.gpaMean.toFixed(2)} ± ${d.gpaStd.toFixed(2)}</td>
+                    <td class="text-center font-mono">${d.ieltsMean.toFixed(2)} ± ${d.ieltsStd.toFixed(2)}</td>
+                </tr>`
+            ).join('');
+
+            const qualityBody = document.getElementById('uniQualityTable').querySelector('tbody');
+            qualityBody.innerHTML = Object.entries(data.tiers).map(([tier, d]) => 
+                `<tr>
+                    <td>${tier}</td>
+                    <td class="text-center font-mono">${d.qualityMean.toFixed(3)} ± ${d.qualityStd.toFixed(3)}</td>
+                    <td class="text-center">${d.count}</td>
+                </tr>`
+            ).join('');
+
+            const bottom10Body = document.getElementById('uniBottom10Table').querySelector('tbody');
+            bottom10Body.innerHTML = Object.entries(data.tiers).map(([tier, d]) => {
+                const pct = d.count > 0 ? (d.bottom10Count / d.count * 100).toFixed(1) : 0;
+                return `<tr>
+                    <td>${tier}</td>
+                    <td class="text-center">${d.bottom10Count}</td>
+                    <td class="text-center">${d.count}</td>
+                    <td class="text-right font-mono">${pct}%</td>
+                </tr>`;
+            }).join('');
+            
+            const keyFindingsList = document.getElementById('uniKeyFindings');
+            keyFindingsList.innerHTML = data.keyFindings.map(f => 
+                `<li class="flex items-start mb-2">
+                    <span class="inline-block w-2 h-2 bg-amber-400 rounded-full mt-1.5 mr-2 flex-shrink-0"></span>
+                    <span>${f}</span>
+                </li>`
+            ).join('');
+        }
+
+        // Modified Chart Function
+        function createUniversityQualityChart(data) {
+            const ctx = document.getElementById('universityQualityChart')?.getContext('2d');
+            if (!ctx) return; // Ensure canvas exists
+            
+            const tierLabels = Object.keys(data.tiers);
+            const qualityScores = tierLabels.map(tier => data.tiers[tier].qualityMean);
+            const countData = tierLabels.map(tier => data.tiers[tier].count);
+            const errorBars = tierLabels.map(tier => data.tiers[tier].qualityStd);
+            
+            new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: tierLabels.map(t => t.replace('Tier ', 'T')), // Shorter labels
+                    datasets: [{
+                        label: 'Mean Quality Score',
+                        data: qualityScores,
+                        backgroundColor: ['rgba(245, 158, 11, 0.7)', 'rgba(217, 119, 6, 0.7)', 'rgba(180, 83, 9, 0.7)'],
+                        borderColor: ['rgba(245, 158, 11, 1)', 'rgba(217, 119, 6, 1)', 'rgba(180, 83, 9, 1)'],
+                        borderWidth: 1,
+                        borderRadius: 6,
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: { 
+                        y: { 
+                            title: { 
+                                display: true, 
+                                text: 'Mean Quality Score (PCA)', 
+                                color: '#FFFFFF',
+                                font: {
+                                    size: 12
                                 }
+                            }, 
+                            ticks: { 
+                                color: '#FFFFFF' 
+                            }, 
+                            grid: { 
+                                color: 'rgba(255, 255, 255, 0.1)' 
+                            } 
+                        }, 
+                        x: { 
+                            ticks: { 
+                                color: '#FFFFFF' 
+                            }, 
+                            grid: { 
+                                color: 'rgba(255, 255, 255, 0.1)' 
+                            } 
+                        } 
+                    },
+                    plugins: {
+                        legend: { display: false },
+                        tooltip: {
+                            backgroundColor: 'rgba(0, 0, 0, 0.8)',
+                            titleFont: {
+                                size: 14,
+                                weight: 'bold'
+                            },
+                            bodyFont: {
+                                size: 13
+                            },
+                            callbacks: {
+                                title: (context) => {
+                                    return tierLabels[context[0].dataIndex];
+                                },
+                                label: (context) => `Quality Score: ${context.parsed.y.toFixed(3)}`,
+                                afterLabel: (context) => [
+                                    `Standard Deviation: ±${errorBars[context.dataIndex].toFixed(3)}`,
+                                    `Sample Size: ${countData[context.dataIndex]} applicants`
+                                ]
                             }
                         }
                     }
@@ -534,22 +793,39 @@
         // Fetch and render data when the page loads
         window.addEventListener('DOMContentLoaded', async () => {
             try {
+                // Start with rendering the university rankings (static data)
+                renderUniversityRankings(uniDataStatic);
+                createUniversityQualityChart(uniDataStatic);
+                
+                // Then load dynamic data from API endpoints
                 const [model2Data, model3Data, model7Data] = await Promise.all([
-                    fetchData('/api/model2'),
-                    fetchData('/api/model3'),
-                    fetchData('/api/model7')
+                    fetchData('/api/model2').catch(e => { console.error('IELTS-GPA data failed:', e); return null; }),
+                    fetchData('/api/model3').catch(e => { console.error('Country GPA data failed:', e); return null; }),
+                    fetchData('/api/model7').catch(e => { console.error('Applicant Quality data failed:', e); return null; })
                 ]);
                 
-                renderModel2(model2Data);
-                renderModel3(model3Data);
-                renderModel7(model7Data);
+                if (model2Data) renderModel2(model2Data); else showError('model2Result', 'Failed to load IELTS-GPA relationship data.');
+                if (model3Data) renderModel3(model3Data); else showError('model3Result', 'Failed to load Country GPA comparison data.');
+                if (model7Data) renderModel7(model7Data); else showError('model7Result', 'Failed to load Applicant Quality data.');
                 
-                // Create university quality chart
-                createUniversityQualityChart();
+                // Smooth scroll for navigation
+                document.querySelectorAll('nav a').forEach(anchor => {
+                    anchor.addEventListener('click', function(e) {
+                        e.preventDefault();
+                        const targetId = this.getAttribute('href');
+                        const targetElement = document.querySelector(targetId);
+                        if (targetElement) {
+                            window.scrollTo({
+                                top: targetElement.offsetTop - 20,
+                                behavior: 'smooth'
+                            });
+                        }
+                    });
+                });
                 
             } catch (error) {
                 console.error("Error loading data:", error);
-                showError('globalErrorContainer', `Failed to load data: ${error.message}`);
+                showError('globalErrorContainer', `Failed to load one or more models: ${error.message}`);
             }
         });
     </script>
