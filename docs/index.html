@@ -649,6 +649,49 @@
             });
         }
 
+        // --- All static data for GitHub Pages deployment ---
+        const model2DataStatic = {
+            coef: {GPA: -0.693, GPA2: 0.136},
+            country_effects: [
+                {country: 'Iran', effect: 8.423, ci_lower: 5.133, ci_upper: 11.712},
+                {country: 'Iran, Islamic Republic of', effect: 8.281, ci_lower: 5.144, ci_upper: 11.418},
+                {country: 'Nepal', effect: 8.006, ci_lower: 4.810, ci_upper: 11.202},
+                {country: 'India ', effect: 7.934, ci_lower: 4.706, ci_upper: 11.162},
+                {country: 'India', effect: 7.773, ci_lower: 4.588, ci_upper: 10.958},
+                {country: 'Pakistan', effect: 7.633, ci_lower: 4.428, ci_upper: 10.839},
+                {country: 'Bangladesh', effect: 7.593, ci_lower: 4.415, ci_upper: 10.772},
+                {country: 'Bangladesh ', effect: 7.332, ci_lower: 4.121, ci_upper: 10.543},
+                {country: 'China', effect: 7.035, ci_lower: 3.737, ci_upper: 10.333}
+            ],
+            n: 343,
+            r2: 0.105
+        };
+
+        const model3DataStatic = {
+            bars: [
+                {country: 'Iran', gap: 3.58, se: 0.147, ci_lower: 3.291, ci_upper: 3.869},
+                {country: 'Bangladesh', gap: 3.384, se: 0.047, ci_lower: 3.293, ci_upper: 3.476},
+                {country: 'China', gap: 3.365, se: 0.165, ci_lower: 3.042, ci_upper: 3.688},
+                {country: 'India', gap: 3.26, se: 0.022, ci_lower: 3.217, ci_upper: 3.303},
+                {country: 'Iran, Islamic Republic of', gap: 3.42, se: 0.135, ci_lower: 3.155, ci_upper: 3.685},
+                {country: 'Nepal', gap: 3.31, se: 0.072, ci_lower: 3.169, ci_upper: 3.451},
+                {country: 'Pakistan', gap: 3.22, se: 0.068, ci_lower: 3.087, ci_upper: 3.353},
+                {country: 'Bangladesh ', gap: 3.30, se: 0.055, ci_lower: 3.192, ci_upper: 3.408},
+                {country: 'India ', gap: 3.28, se: 0.064, ci_lower: 3.155, ci_upper: 3.405}
+            ]
+        };
+
+        const model7DataStatic = {
+            q10: -1.324,
+            low_quality_by_country: [
+                {country: 'India', count: 27},
+                {country: 'Pakistan', count: 4},
+                {country: 'Bangladesh', count: 2},
+                {country: 'Nepal', count: 2},
+                {country: 'Iran, Islamic Republic of', count: 1}
+            ]
+        };
+
         // --- University Rankings Rendering (Static Data) ---
         const uniDataStatic = {
              matchedCount: 190,
@@ -797,7 +840,13 @@
                 renderUniversityRankings(uniDataStatic);
                 createUniversityQualityChart(uniDataStatic);
                 
-                // Then load dynamic data from API endpoints
+                // For GitHub Pages: Use static data instead of API calls
+                renderModel2(model2DataStatic);
+                renderModel3(model3DataStatic);
+                renderModel7(model7DataStatic);
+                
+                /* 
+                // This was the original API code - disabled for GitHub Pages
                 const [model2Data, model3Data, model7Data] = await Promise.all([
                     fetchData('/api/model2').catch(e => { console.error('IELTS-GPA data failed:', e); return null; }),
                     fetchData('/api/model3').catch(e => { console.error('Country GPA data failed:', e); return null; }),
@@ -807,6 +856,7 @@
                 if (model2Data) renderModel2(model2Data); else showError('model2Result', 'Failed to load IELTS-GPA relationship data.');
                 if (model3Data) renderModel3(model3Data); else showError('model3Result', 'Failed to load Country GPA comparison data.');
                 if (model7Data) renderModel7(model7Data); else showError('model7Result', 'Failed to load Applicant Quality data.');
+                */
                 
                 // Smooth scroll for navigation
                 document.querySelectorAll('nav a').forEach(anchor => {
