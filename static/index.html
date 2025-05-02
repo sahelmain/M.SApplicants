@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Disable caching -->
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+    <title>PhD Applications Dashboard</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Include SheetJS library from CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+    <!-- Chart.js for visualizations -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        body {
+            background: linear-gradient(to bottom, #1e293b, #0f172a);
+            min-height: 100vh;
+            color: white;
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 1rem;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            margin-bottom: 2rem; /* Add spacing between cards */
+            padding: 1.5rem;
+        }
+        .error-message {
+            color: #ef4444;
+            padding: 1rem;
+            margin: 1rem 0;
+            border: 1px solid #ef4444;
+            border-radius: 0.5rem;
+            background: rgba(239, 68, 68, 0.1);
+        }
+        table {
+            width: 100%;
+            margin-top: 1rem;
+            border-collapse: collapse;
+        }
+        th, td {
+            padding: 0.5rem 1rem;
+            text-align: left;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        th {
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+        h2 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+            padding-bottom: 0.5rem;
+        }
+        .loading-placeholder {
+            text-align: center;
+            padding: 2rem;
+            color: #94a3b8;
+        }
+    </style>
+</head>
+<body class="p-8">
+    <div class="max-w-7xl mx-auto">
+        <h1 class="text-3xl font-bold mb-8 text-center">PhD Application Analysis</h1>
+        
+        <div id="globalErrorContainer" class="hidden"></div>
+
+        <!-- Model 2: Score Production -->
+        <div class="glass-card">
+            <h2>Model 2: Score Production Function (IELTS ~ GPA + Country)</h2>
+            <p class="text-sm text-blue-200 mb-2">How calculated: We used <b>linear regression</b> to predict IELTS-equivalent scores from GPA and country. This means we fit a line (with a curve for GPA²) to see how much GPA and country affect IELTS scores, holding the other constant.<br>
+            <span class='italic'>IELTS_EQ = β₀ + β₁ × GPA + β₂ × GPA² + γ<sub>c</sub> × Country + ε</span><br>
+            <span class='italic'>β₁: effect of GPA, β₂: effect of GPA squared (diminishing returns), γ<sub>c</sub>: effect for each country, ε: error</span></p>
+            <div id="model2Result">
+                <div class="loading-placeholder">Loading Model 2 data...</div>
+            </div>
+        </div>
+
+        <!-- Model 3: Country GPA Gaps -->
+        <div class="glass-card">
+            <h2>Model 3: Country Average GPA</h2>
+            <p class="text-sm text-blue-200 mb-2">How calculated: For each country, we simply averaged the GPAs of all applicants from that country.<br>
+            <span class='italic'>Mean GPA = (sum of all GPAs from country) / (number of applicants from country)</span></p>
+            <div id="model3Result">
+                <div class="loading-placeholder">Loading Model 3 data...</div>
+                <canvas id="model3Chart"></canvas>
+            </div>
+        </div>
+
+        <!-- Model 7: Applicant Quality -->
+        <div class="glass-card">
+            <h2>Model 7: Latent Applicant Quality (Bottom 10%)</h2>
+            <p class="text-sm text-blue-200 mb-2">How calculated: We used <b>Principal Component Analysis (PCA)</b> to combine standardized GPA and IELTS into a single "quality" score for each applicant.<br>
+            <span class='italic'>Quality = w₁ × zGPA + w₂ × zIELTS (weights from PCA)</span><br>
+            <b>What is PCA?</b> PCA is a math technique that finds the best way to combine several numbers (here, GPA and IELTS) into one score that summarizes overall performance. The "bottom 10%" are those with the lowest combined scores.<br>
+            <span class='italic'>Threshold = 10th percentile of all quality scores</span></p>
+            <div id="model7Result">
+                 <div class="loading-placeholder">Loading Model 7 data...</div>
+            </div>
+        </div>
+
+        <!-- University Rankings Analysis -->
+        <div class="glass-card">
+            <h2>University Rankings Analysis</h2>
+            <div id="universityRankingsResult">
+                <p class="mb-4">This analysis explores how the global ranking of an applicant's undergraduate institution affects their performance metrics and overall application quality.</p>
+                
+                <h3 class="font-semibold mt-4 mb-2">University Tier Distribution (190 matched applicants)</h3>
+                <p class="text-sm text-blue-200 mb-2">How calculated: Each applicant's undergraduate institution was matched to a global ranking and grouped into tiers. This table shows the number and percentage of applicants in each tier.</p>
+                <div class="overflow-x-auto">
+                    <table class="w-full">
+                        <thead>
+                            <tr>
+                                <th>University Tier</th>
+                                <th>Count</th>
+                                <th>Percentage</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Tier 2 (301-600)</td>
+                                <td>12</td>
+                                <td>6.3%</td>
+                            </tr>
+                            <tr>
+                                <td>Tier 3 (601-1200)</td>
+                                <td>52</td>
+                                <td>27.4%</td>
+                            </tr>
+                            <tr>
+                                <td>Tier 4 (1201+)</td>
+                                <td>126</td>
+                                <td>66.3%</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <h3 class="font-semibold mt-6 mb-2">Performance by University Tier</h3>
+                <p class="text-sm text-blue-200 mb-2">How calculated: For each tier, we computed the mean and standard deviation of GPA and IELTS scores.<br>
+                <span class='italic'>Mean = (sum of all values) / (number of values)</span></p>
+                <div class="overflow-x-auto">
+                    <table class="w-full">
+                        <thead>
+                            <tr>
+                                <th>University Tier</th>
+                                <th>GPA (Mean)</th>
+                                <th>GPA (Std)</th>
+                                <th>IELTS (Mean)</th>
+                                <th>IELTS (Std)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Tier 2</td>
+                                <td>3.22</td>
+                                <td>0.50</td>
+                                <td>7.21</td>
+                                <td>0.75</td>
+                            </tr>
+                            <tr>
+                                <td>Tier 3</td>
+                                <td>3.33</td>
+                                <td>0.33</td>
+                                <td>7.07</td>
+                                <td>0.56</td>
+                            </tr>
+                            <tr>
+                                <td>Tier 4</td>
+                                <td>3.23</td>
+                                <td>0.28</td>
+                                <td>7.02</td>
+                                <td>0.59</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <h3 class="font-semibold mt-6 mb-2">Quality Score by University Tier</h3>
+                <p class="text-sm text-blue-200 mb-2">How calculated: We used <b>Principal Component Analysis (PCA)</b> to combine standardized GPA and IELTS into a single "quality" score for each applicant.<br>
+                <span class='italic'>Quality = w₁ × zGPA + w₂ × zIELTS (weights from PCA)</span></p>
+                <div class="overflow-x-auto">
+                    <table class="w-full">
+                        <thead>
+                            <tr>
+                                <th>University Tier</th>
+                                <th>Quality Mean</th>
+                                <th>Quality Std</th>
+                                <th>Count</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Tier 2</td>
+                                <td>0.165</td>
+                                <td>0.786</td>
+                                <td>12</td>
+                            </tr>
+                            <tr>
+                                <td>Tier 3</td>
+                                <td>0.139</td>
+                                <td>1.097</td>
+                                <td>52</td>
+                            </tr>
+                            <tr>
+                                <td>Tier 4</td>
+                                <td>-0.073</td>
+                                <td>1.022</td>
+                                <td>126</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <!-- Add chart canvas for university ranking visualization -->
+                <div class="mt-6" style="height: 300px;">
+                    <canvas id="universityQualityChart"></canvas>
+                </div>
+
+                <h3 class="font-semibold mt-6 mb-2">Bottom 10% Students by University Tier</h3>
+                <p class="text-sm text-blue-200 mb-2">How calculated: The bottom 10% are applicants with the lowest quality scores (from PCA).<br>
+                <span class='italic'>Threshold = 10th percentile of all quality scores</span></p>
+                <div class="overflow-x-auto">
+                    <table class="w-full">
+                        <thead>
+                            <tr>
+                                <th>University Tier</th>
+                                <th>Count of Bottom 10%</th>
+                                <th>Total Count</th>
+                                <th>Percentage in Bottom 10%</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Tier 2</td>
+                                <td>0</td>
+                                <td>12</td>
+                                <td>0%</td>
+                            </tr>
+                            <tr>
+                                <td>Tier 3</td>
+                                <td>4</td>
+                                <td>52</td>
+                                <td>7.7%</td>
+                            </tr>
+                            <tr>
+                                <td>Tier 4</td>
+                                <td>15</td>
+                                <td>126</td>
+                                <td>11.9%</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <h3 class="font-semibold mt-6 mb-2">Key Findings</h3>
+                <ul class="list-disc pl-5 space-y-2">
+                    <li>University tier has a small but not statistically significant effect on both GPA and IELTS scores.</li>
+                    <li>Higher-ranked universities (Tier 2) have greater average applicant quality based on our combined PCA metric.</li>
+                    <li>No applicants from Tier 2 universities fall in the bottom 10% of quality.</li>
+                    <li>11.9% of Tier 4 applicants fall in the bottom 10%, compared to 7.7% for Tier 3.</li>
+                </ul>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        function showError(containerId, message) {
+            const errorContainer = document.getElementById(containerId);
+            if (errorContainer) {
+            errorContainer.innerHTML = `<div class="error-message">${message}</div>`;
+            } else {
+                console.error("Error container not found:", containerId);
+            }
+        }
+
+        async function fetchData(url) {
+            try {
+                const response = await fetch(url);
+                if (!response.ok) {
+                    let errorMsg = `HTTP error! status: ${response.status}`;
+                    try {
+                         const errData = await response.json();
+                         errorMsg += `: ${errData.error || 'Unknown error'}`;
+                    } catch (e) {/* Ignore if response is not JSON */}
+                    throw new Error(errorMsg);
+                }
+                return await response.json();
+            } catch (error) {
+                console.error(`Error fetching ${url}:`, error);
+                throw error; // Re-throw to be caught by the caller
+            }
+        }
+
+        function renderModel2(data) {
+            const container = document.getElementById('model2Result');
+            const gpaCoef = data.coef.GPA.toFixed(2);
+            const gpa2Coef = data.coef.GPA2.toFixed(2);
+            const countryEffects = data.country_effects || [];
+            
+            console.log("Model 2 data received:", data); // Debug log
+            
+            let tableHtml = `
+                <p class="mb-2 text-blue-200 text-sm">Sample Size (N): <b>${data.n}</b> is the number of applicants included in this model. R²: <b>${data.r2.toFixed(2)}</b> means the model explains ${Math.round(data.r2*100)}% of the variation in IELTS scores.</p>
+                <p class="mb-2 text-blue-200 text-sm">The tables below show the top and bottom 5 country effects. The "Effect" value tells you how much higher or lower, on average, applicants from that country score on IELTS (after accounting for GPA), compared to the reference group. Higher values mean higher predicted IELTS scores for that country.</p>
+                <p class="mb-4">+1 GPA point ≈ <strong>${gpaCoef}</strong> IELTS-equivalent band (Note: GPA² coefficient is ${gpa2Coef}, indicating diminishing returns).</p>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">`;
+
+            if (countryEffects.length > 0) {
+                const topEffects = countryEffects.slice(0, 5);
+                const bottomEffects = countryEffects.slice(-5).reverse();
+                
+                tableHtml += `<div>
+                    <h3 class="font-semibold mb-2">Top 5 Country Effects (vs Intercept/Reference)</h3>
+                    <table class="w-full"><thead><tr><th>Country</th><th>Effect</th></tr></thead><tbody>`;
+                topEffects.forEach(item => {
+                    tableHtml += `<tr><td>${item.country}</td><td>${item.effect.toFixed(2)}</td></tr>`;
+                });
+                tableHtml += `</tbody></table></div><div>
+                    <h3 class="font-semibold mb-2">Bottom 5 Country Effects (vs Intercept/Reference)</h3>
+                    <table class="w-full"><thead><tr><th>Country</th><th>Effect</th></tr></thead><tbody>`;
+                bottomEffects.forEach(item => {
+                    tableHtml += `<tr><td>${item.country}</td><td>${item.effect.toFixed(2)}</td></tr>`;
+                });
+                tableHtml += `</tbody></table>`;
+            } else {
+                console.warn("No country effects data available for Model 2");
+                tableHtml += `<p class="text-yellow-500">No country effects data available.</p>`;
+            }
+            
+            tableHtml += `</div></div>`;
+            container.innerHTML = tableHtml;
+        }
+        
+        let model3ChartInstance = null; // Store chart instance
+        function renderModel3(data) {
+            console.log("Model 3 data received:", data); // Debug log
+            
+            const container = document.getElementById('model3Result');
+            // Ensure we have a canvas element
+            let canvas = document.getElementById('model3Chart');
+            if (!canvas) {
+                canvas = document.createElement('canvas');
+                canvas.id = 'model3Chart';
+                canvas.style.height = '400px'; // Set a fixed height
+            }
+            
+            // Clear container and add canvas
+            container.innerHTML = '';
+            container.appendChild(canvas);
+            
+            const ctx = canvas.getContext('2d');
+            
+            if (!data.bars || !Array.isArray(data.bars) || data.bars.length === 0) {
+                console.warn("No bars data available for Model 3");
+                container.innerHTML = '<p class="text-yellow-500">No country GPA data available.</p>';
+                return;
+            }
+
+            // Sort data for visualization
+            data.bars.sort((a, b) => b.gap - a.gap);
+            
+            const labels = data.bars.map(item => item.country);
+            const values = data.bars.map(item => item.gap);
+            
+            // Destroy previous chart instance if it exists
+            if (model3ChartInstance) {
+                model3ChartInstance.destroy();
+            }
+
+            model3ChartInstance = new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: labels,
+                    datasets: [{
+                        label: 'Average GPA Level by Country',
+                        data: values,
+                        backgroundColor: 'rgba(54, 162, 235, 0.6)',
+                        borderColor: 'rgba(54, 162, 235, 1)',
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    indexAxis: 'y',
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        x: {
+                            title: {
+                                display: true,
+                                text: 'Average GPA',
+                                color: '#FFFFFF'
+                            },
+                            ticks: {
+                                color: '#FFFFFF'
+                            },
+                            grid: {
+                                color: 'rgba(255, 255, 255, 0.1)'
+                            }
+                        },
+                        y: {
+                            ticks: {
+                                color: '#FFFFFF'
+                            },
+                            grid: {
+                                color: 'rgba(255, 255, 255, 0.1)'
+                            }
+                        }
+                    },
+                    plugins: {
+                        legend: {
+                            display: false
+                        }
+                    }
+                }
+            });
+        }
+
+        function renderModel7(data) {
+            const container = document.getElementById('model7Result');
+            if (!data.low_quality_by_country || !Array.isArray(data.low_quality_by_country) || data.low_quality_by_country.length === 0) {
+                console.warn("No bottom 10% data available for Model 7");
+                container.innerHTML = '<p class="text-yellow-500">No bottom 10% data available.</p>';
+                return;
+            }
+            
+            console.log("Model 7 data received:", data); // Debug log
+            
+            const q10 = data.q10?.toFixed(2) || 'N/A';
+            let tableHtml = `
+                <p class="mb-4">Bottom 10% Quality Threshold (PCA Index): <strong>${q10}</strong></p>
+                <h3 class="font-semibold mb-2">Count of Applicants in Bottom 10% by Country</h3>
+                <table class="w-full">
+                    <thead>
+                        <tr>
+                            <th>Country</th>
+                            <th>Count</th>
+                        </tr>
+                    </thead>
+                    <tbody>`;
+            
+            // Sort by count descending
+            data.low_quality_by_country.sort((a, b) => b.count - a.count);
+            
+            data.low_quality_by_country.forEach(item => {
+                tableHtml += `<tr><td>${item.country}</td><td>${item.count}</td></tr>`;
+            });
+            
+            tableHtml += `</tbody></table>`;
+            container.innerHTML = tableHtml;
+        }
+
+        // Create university quality chart
+        function createUniversityQualityChart() {
+            const ctx = document.getElementById('universityQualityChart').getContext('2d');
+            
+            const tierLabels = ['Tier 2 (301-600)', 'Tier 3 (601-1200)', 'Tier 4 (1201+)'];
+            const qualityScores = [0.165, 0.139, -0.073];
+            const countData = [12, 52, 126];
+            
+            // Calculate bubble sizes based on counts
+            const scaleFactor = 10;
+            const bubbleSizes = countData.map(count => count * scaleFactor);
+            
+            new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: tierLabels,
+                    datasets: [{
+                        label: 'Quality Score by University Tier',
+                        data: qualityScores,
+                        backgroundColor: [
+                            'rgba(75, 192, 192, 0.7)',
+                            'rgba(54, 162, 235, 0.7)',
+                            'rgba(255, 99, 132, 0.7)'
+                        ],
+                        borderColor: [
+                            'rgba(75, 192, 192, 1)',
+                            'rgba(54, 162, 235, 1)',
+                            'rgba(255, 99, 132, 1)'
+                        ],
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        y: {
+                            title: {
+                                display: true,
+                                text: 'Mean Quality Score (PCA)',
+                                color: '#FFFFFF'
+                            },
+                            ticks: {
+                                color: '#FFFFFF'
+                            },
+                            grid: {
+                                color: 'rgba(255, 255, 255, 0.1)'
+                            }
+                        },
+                        x: {
+                            ticks: {
+                                color: '#FFFFFF'
+                            },
+                            grid: {
+                                color: 'rgba(255, 255, 255, 0.1)'
+                            }
+                        }
+                    },
+                    plugins: {
+                        legend: {
+                            labels: {
+                                color: '#FFFFFF'
+                            }
+                        },
+                        tooltip: {
+                            callbacks: {
+                                afterLabel: function(context) {
+                                    const tierIndex = context.dataIndex;
+                                    return `Sample size: ${countData[tierIndex]} applicants`;
+                                }
+                            }
+                        }
+                    }
+                }
+            });
+        }
+
+        // Fetch and render data when the page loads
+        window.addEventListener('DOMContentLoaded', async () => {
+            try {
+                const [model2Data, model3Data, model7Data] = await Promise.all([
+                    fetchData('/api/model2'),
+                    fetchData('/api/model3'),
+                    fetchData('/api/model7')
+                ]);
+                
+                renderModel2(model2Data);
+                renderModel3(model3Data);
+                renderModel7(model7Data);
+                
+                // Create university quality chart
+                createUniversityQualityChart();
+                
+            } catch (error) {
+                console.error("Error loading data:", error);
+                showError('globalErrorContainer', `Failed to load data: ${error.message}`);
+            }
+        });
+    </script>
+</body>
+</html> 
